@@ -144,38 +144,44 @@
         /* fin slider con imágenes*/
 
         .services-section,
-        .seccion-noticias,
         .seccion-equipo {
             display: flex;
             margin-bottom: 100px;
         }
 
-        .seccion-noticias,
         .header-container {
             background-color: #089DC2
         }
 
-        .seccion-noticias {
+        .news-section {
             flex-wrap: wrap;
-        }
-
-        .services-info {
-            padding: 20px;
-            text-align: center;
+            display: flex;
+            margin-bottom: 100 px;
         }
 
         .news-info {
             width: 50%;
             padding: 20px;
+            border: 10px;
+        }
+
+        .news-info__imagen{
+            width: 100%;
+            height: 100%;
         }
 
         .news-header {
-            display: flex;
+            display: block;
             justify-content: space-around;
         }
 
         .news-info__title {
             align-self: center;
+        }
+
+        .services-info {
+            padding: 20px;
+            text-align: center;
         }
 
         .seccion-pie {
@@ -308,7 +314,7 @@
 
         <h1>Noticias</h1>
         <!-- inicio sección de noticias -->
-        <div id="noticias" class="seccion-noticias">
+        <div id="news" class="news-section">
             <article class="news-info">
                 <div class="news-header">
                     <img class="news-info__imagen" src="http://placeimg.com/400/200/animals" alt="">
@@ -318,7 +324,7 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat
                     eligendi! Inventore voluptas
                     voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut
-                    corporis?
+                    corporis? <a href="http://127.0.0.1:5500/src/index.html">Ver más</a>
                 </p>
             </article>
 
@@ -331,7 +337,7 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat
                     eligendi! Inventore voluptas
                     voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut
-                    corporis?
+                    corporis? <a href="http://127.0.0.1:5500/src/index.html">Ver más</a>
                 </p>
             </article>
 
@@ -344,7 +350,7 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat
                     eligendi! Inventore voluptas
                     voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut
-                    corporis?
+                    corporis? <a href="http://127.0.0.1:5500/src/index.html">Ver más</a>
                 </p>
             </article>
 
@@ -357,7 +363,7 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat
                     eligendi! Inventore voluptas
                     voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut
-                    corporis?
+                    corporis? <a href="http://127.0.0.1:5500/src/index.html">Ver más</a>
                 </p>
             </article>
 
