@@ -36,7 +36,7 @@
                 </li>
                 <li id="slide3">
                     <h1>Tablero de anuncios</h1>
-                    <p>en este párrafo se puede agregar cualquier información relevante para la biblioteca.<br>
+                    <p>En este párrafo se puede agregar cualquier información relevante para la biblioteca.<br>
                         Puede contener información de actividades próximas a realizar e información de
                         interés general para la comunicadad a la que esté dirigida la página.<br> Con esto se comprueba que
                         podemos agregar cualquier tipo de elementos en el slider.</p>
