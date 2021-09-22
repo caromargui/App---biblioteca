@@ -289,7 +289,6 @@ ul.slider li:target {
 .news-info {
   width: 50%;
   padding: 10px;
-  border: 0.1px solid black;
 }
 
 .news-info__image {
