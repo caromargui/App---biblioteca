@@ -1,5 +1,5 @@
 <template>
-  <div class="header-section">
+  <div >
     <div class="header-container">
       <div class="logo-container">
         <!-- <a> enlaza la imagen con la página de inicio -->
@@ -25,37 +25,6 @@
       </ul>
       <!-- Fin menú navegación -->
     </div>
-    <div class="banner">
-            <!-- inicio slider con imágenes -->
-            <ul class="slider">
-                <li id="slide1">
-                    <img src="./libros.jpg" alt="Libros image" />
-                </li>
-                <li id="slide2">
-                    <img src="./banner.jpg" alt="A banner image" />
-                </li>
-                <li id="slide3">
-                    <h1>Tablero de anuncios</h1>
-                    <p>En este párrafo se puede agregar cualquier información relevante para la biblioteca.<br>
-                        Puede contener información de actividades próximas a realizar e información de
-                        interés general para la comunicadad a la que esté dirigida la página.<br> Con esto se comprueba que
-                        podemos agregar cualquier tipo de elementos en el slider.</p>
-                </li>
-            </ul>
-            <ul class="menu">
-                <li>
-                    <a href="#slide1">1</a>
-                </li>
-                <li>
-                    <a href="#slide2">2</a>
-                </li>
-                <li>
-                    <a href="#slide3">3</a>
-                </li>
-            </ul>
-
-            <!-- fin slider con imágenes -->
-        </div>
   </div>
 </template>
 
@@ -77,7 +46,7 @@ body{
 }
 
 .header-section {
-  margin-bottom: 100px;
+  margin-bottom: 0px;
 }
 
 .header-container {
