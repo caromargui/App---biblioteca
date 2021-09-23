@@ -1,21 +1,9 @@
 <template>
   <div id="app">
-    <pagina-inicio />
+    
+    <router-view/>
   </div>
 </template>
-
-<script>
-import PaginaInicio from './components/PaginaInicio.vue'
-
-
-export default {
-  name: 'App',
-  components: {
-    PaginaInicio
-    
-  }
-}
-</script>
 
 <style lang="scss">
 #app {
@@ -24,7 +12,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 0;
 }
 
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
 </style>

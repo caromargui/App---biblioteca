@@ -17,7 +17,10 @@
       </div>
 
       <ul class="site-nav">
-        <a href="#">Inicio</a>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link> |
+        <router-link to="/servicios">Servicios</router-link>
+        <a href="/" to="/">Inicio</a>
         <a href="#simulator">Simulador</a>
         <a href="#courses">Curso</a>
         <a href="#lendings">Préstamos</a>
@@ -40,7 +43,7 @@ export default {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
+body {
   padding: 0;
   margin: 0;
 }
@@ -172,5 +175,4 @@ ul.slider li:target {
 .header-container {
   background-color: #089dc2;
 }
-
 </style>
