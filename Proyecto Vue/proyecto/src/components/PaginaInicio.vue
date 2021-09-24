@@ -1,6 +1,35 @@
 <template>
   <div>
-    <Header />
+    <div class="header-container">
+      <div class="logo-container">
+        <!-- <a> enlaza la imagen con la página de inicio -->
+        <a href="">
+          <img
+            class="logo-container__site-logo"
+            src="./logobiblioteca.png"
+            alt="Logo Bibilioteca Comunitaria"
+          />
+        </a>
+      </div>
+
+      <div class="site-title">
+        <h1>Biblioteca Comunitaria</h1>
+      </div>
+
+      <ul class="site-nav">
+        <router-link to="/">Home</router-link>
+        |
+        <router-link to="/about">About</router-link>
+        |
+        <router-link to="/servicios">Servicios</router-link>
+        <a href="/" to="/">Inicio</a>
+        <a href="#simulator">Simulador</a>
+        <a href="#courses">Curso</a>
+        <a href="#lendings">Préstamos</a>
+        <a href="#login">Iniciar sesión</a>
+      </ul>
+      <!-- Fin menú navegación -->
+    </div>
     <div class="banner">
       <!-- inicio slider con imágenes -->
       <ul class="slider">

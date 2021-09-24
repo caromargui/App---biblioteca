@@ -1,14 +1,8 @@
 <template>
   <div>
     <Header />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
 
-    <div id="login-overlay" class="modal-dialog ">
+    <div id="login-overlay" class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
           <div class="row">
@@ -38,9 +32,23 @@
                     />
                   </div>
                   <br />
-                  <button type="submit" class="btn btn-success btn-block">
-                    INICIAR SESIÓN
-                  </button>
+                  <div class="row mx-auto col-5">
+                    <button class="btn btn-success btn-block">
+                      INICIAR SESIÓN
+                    </button>
+                  </div>
+                  <div class="row mx-auto col-5">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-container="body"
+                      data-bs-toggle="popover"
+                      data-bs-placement="bottom"
+                      data-bs-content="Bottom popover"
+                    >
+                      ¡Quiero registrame!
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -56,6 +64,8 @@ import Header from "./Header.vue";
 export default {
   components: { Header },
 };
+
+
 </script>
 
 <style>

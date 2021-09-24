@@ -1,6 +1,5 @@
 <template>
   <div >
-      <h1>Pagina de servicios</h1>
       <inicio-sesion />
   </div>
 </template>
