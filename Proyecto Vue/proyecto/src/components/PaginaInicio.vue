@@ -183,6 +183,48 @@
       </div>
       <!-- fin sección de noticias -->
     </div>
+    <!-- Inicio pie del sitio -->
+    <div class="seccion-pie">
+      <div class="logo-container">
+        <!-- <a> enlaza la imagen con la página de inicio -->
+        <a href="">
+          <img
+            class="center"
+            src="./logobiblioteca.png"
+            alt="Logo Bibilioteca Comunitaria"
+          />
+        </a>
+      </div>
+      <article>
+        <h2>Contactanos</h2>
+        <p>
+          Sebastian Barrera (Scrum Master): <i>sbarrera.96@hotmail.com</i>
+          <br />
+          Carolina Cova (Product owner):
+          <i>caromargui@gmail.com</i> <br />
+          Sebastian Rentería (Development Team):
+          <i>sren97@gmail.com </i> <br />
+          Diego Guisao (Development Team):
+          <i>diego.alexander.guisao@gmail.com </i> <br />
+          Santiago Puello (Development Team):
+          <i>sepuellov@unal.edu.co </i> <br />
+        </p>
+        <p>
+          Enlace al repositorio GitHub: <br />
+          <a href="https://github.com/caromargui/App---biblioteca"
+            >https://github.com/caromargui/App---biblioteca</a
+          >
+        </p>
+      </article>
+      <article>
+        <h2>Motivación de la página:</h2>
+        <p>
+          Página web dirigida a las bibliotecas comunitarias en la <br />
+          que se tenga usuario y contraseña para acceder a la información
+          disponible.
+        </p>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -216,6 +258,11 @@ body {
 
 p {
   text-transform: none;
+}
+
+.center {
+  padding: 70px 0;
+  width: 50%;
 }
 
 .header-section {
@@ -382,7 +429,7 @@ ul.slider li:target {
 
 .seccion-pie {
   background-color: #25294f;
-  height: 200px;
+  height: 270px;
   display: flex;
   color: white;
   justify-content: space-evenly;
