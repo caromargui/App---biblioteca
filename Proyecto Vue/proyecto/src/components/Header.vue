@@ -28,63 +28,25 @@
         </button>
         <div class="d-flex justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            <li>
+              <router-link class="nav-link" to="/">Inicio</router-link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
+            <li>
+              <router-link class="nav-link" to="/about">About</router-link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/servicios">Servicios</a>
+            <li>
+              <router-link class="nav-link" to="/servicios">Servicios</router-link>
             </li>
-            <li class="nav-item">
+            <li>
               <a class="nav-link" href="#">Préstamos</a>
             </li>
-            <li class="nav-item">
+            <li>
               <a class="nav-link" href="#">Iniciar sesión</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <b-container>
-      <b-carousel
-        controls
-        indicators
-        img-width="1024"
-        img-height="200"
-        :interval="3000"
-        v-model="slide"
-      >
-        <b-carousel-slide img-src="https://picsum.photos/1024/200/?image=11">
-          <h1>Hello World!</h1>
-        </b-carousel-slide>
-
-        <b-carousel-slide
-          caption="Blank image"
-          img-blank
-          style="background: lightskyblue"
-        >
-          <p>My custom slide whitout eny image here!</p>
-        </b-carousel-slide>
-        <b-carousel-slide
-          img-src="https://picsum.photos/1024/200/?image=14"
-        ></b-carousel-slide>
-
-        <b-carousel-slide>
-          <template #img>
-            <img
-              class="d-block"
-              width="110%"
-              height=200
-              src="./libros.jpg"
-              alt="image slot"
-            />
-          </template>
-        </b-carousel-slide>
-      </b-carousel>
-    </b-container>
   </div>
 </template>
 
