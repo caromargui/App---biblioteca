@@ -1,42 +1,75 @@
 <template>
   <div>
     <Header />
-    <div class="banner">
-      <!-- inicio slider con imágenes -->
-      <ul class="slider">
-        <li id="slide1">
-          <img src="./libros.jpg" alt="Libros image" />
-        </li>
-        <li id="slide2">
-          <img src="./banner.jpg" alt="A banner image" />
-        </li>
-        <li id="slide3">
-          <h1>Tablero de anuncios</h1>
-          <p>
-            En este párrafo se puede agregar cualquier información relevante
-            para la biblioteca.<br />
-            Puede contener información de actividades próximas a realizar e
-            información de interés general para la comunicadad a la que esté
-            dirigida la página.<br />
-            Con esto se comprueba que podemos agregar cualquier tipo de
-            elementos en el slider.
-          </p>
-        </li>
-      </ul>
-      <ul class="menu">
-        <li>
-          <a href="#slide1">1</a>
-        </li>
-        <li>
-          <a href="#slide2">2</a>
-        </li>
-        <li>
-          <a href="#slide3">3</a>
-        </li>
-      </ul>
+    <!-- Carousel Bootstrap -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
 
-      <!-- fin slider con imágenes -->
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./libros.jpg" class="d-block" style="width: 100%" />
+        </div>
+        <div class="carousel-item">
+          <img src="./banner.jpg" class="d-block" style="width: 100%" />
+        </div>
+        <div class="carousel-item">
+          <div
+            class="container-fluid p-5 bg-dark text-white"
+            style="height: 400px"
+          >
+            <h1>Tablero de anuncios</h1>
+            <p>
+              En este párrafo se puede agregar cualquier información relevante
+              para la biblioteca.<br />
+              Puede contener información de actividades próximas a realizar e
+              información de interés general para la comunidad a la que esté
+              dirigida la página.<br />
+              Con esto se comprueba que podemos agregar cualquier tipo de
+              elementos en el slider.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#demo"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#demo"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
+    <br />
+
     <div>
       <h1>Servicios</h1>
       <!-- inicio sección de servicios -->
@@ -154,6 +187,48 @@
       </div>
       <!-- fin sección de noticias -->
     </div>
+    <!-- Inicio pie del sitio -->
+    <div class="seccion-pie">
+      <div class="logo-container">
+        <!-- <a> enlaza la imagen con la página de inicio -->
+        <a href="">
+          <img
+            class="center"
+            src="./logobiblioteca.png"
+            alt="Logo Bibilioteca Comunitaria"
+          />
+        </a>
+      </div>
+      <article>
+        <h2>Contactanos</h2>
+        <p>
+          Sebastian Barrera (Scrum Master): <i>sbarrera.96@hotmail.com</i>
+          <br />
+          Carolina Cova (Product owner):
+          <i>caromargui@gmail.com</i> <br />
+          Sebastian Rentería (Development Team):
+          <i>sren97@gmail.com </i> <br />
+          Diego Guisao (Development Team):
+          <i>diego.alexander.guisao@gmail.com </i> <br />
+          Santiago Puello (Development Team):
+          <i>sepuellov@unal.edu.co </i> <br />
+        </p>
+        <p>
+          Enlace al repositorio GitHub: <br />
+          <a href="https://github.com/caromargui/App---biblioteca"
+            >https://github.com/caromargui/App---biblioteca</a
+          >
+        </p>
+      </article>
+      <article>
+        <h2>Motivación de la página:</h2>
+        <p>
+          Página web dirigida a las bibliotecas comunitarias en la <br />
+          que se tenga usuario y contraseña para acceder a la información
+          disponible.
+        </p>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -187,6 +262,11 @@ body {
 
 p {
   text-transform: none;
+}
+
+.center {
+  padding: 70px 0;
+  width: 50%;
 }
 
 .header-section {
@@ -353,7 +433,7 @@ ul.slider li:target {
 
 .seccion-pie {
   background-color: #25294f;
-  height: 200px;
+  height: 270px;
   display: flex;
   color: white;
   justify-content: space-evenly;
