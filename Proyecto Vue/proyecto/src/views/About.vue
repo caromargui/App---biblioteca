@@ -1,21 +1,25 @@
 <template>
   <div class="home">
+    <Header />
     <h1>This is an about page</h1>
-    <pagina-inicio />
-    
+    <Contactenos />
+    <Piedepag />
   </div>
 </template>
 
 <script>
-import PaginaInicio from '../components/PaginaInicio.vue'
+import Contactenos from "../components/Contactenos.vue";
+import Header from '../components/Header.vue';
+import Piedepag from '../components/Piedepag.vue';
+
 // @ is an alias to /src
 
-
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    PaginaInicio
-    
-  }
-}
+    Contactenos,
+    Piedepag,
+    Header
+  },
+};
 </script>
