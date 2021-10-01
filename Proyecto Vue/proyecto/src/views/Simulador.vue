@@ -1,7 +1,7 @@
 <template>
   <div>
       <Header/>
-      <piedepag/>
+      <Piedepag/>
   </div>
 </template>
 
