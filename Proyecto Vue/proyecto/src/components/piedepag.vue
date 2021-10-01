@@ -1,43 +1,56 @@
 <template>
   <div>
+      <!-- Inicio pie del sitio -->
     <div class="seccion-pie">
+      <div class="logo-container">
+        <!-- <a> enlaza la imagen con la página de inicio -->
+        <a href="">
+          <img
+            class="center"
+            src="./logobiblioteca.png"
+            alt="Logo Bibilioteca Comunitaria"
+          />
+        </a>
+      </div>
       <article>
-        <h2>Motivación de la página:</h2>
-        <font size="1"
-          ><p>
-            Hemos pensado en una página web dirigida a las bibliotecas
-            comunitarias en la que se tenga un usuario y contraseña para acceder
-            a los <br />
-            cursos y servicios que se ofrezcan por ejemplo un servicio podría
-            ser asesoría financiera a personas en cuanto a prestamos, nos motiva
-            <br />
-            pensar en una página que ayude a las juntas de acción comunales y la
-            disponibilidad de la información, para personas que lo necesiten.
-          </p></font
-        >
-        <font size="2"><p>Enlace al repositorio:</p></font> <br />
-        <font size="1">"https://github.com/caromargui/App---biblioteca"]</font>
+        <h2>Contactanos</h2>
+        <p>
+          Sebastian Barrera (Scrum Master): <i>sbarrera.96@hotmail.com</i>
+          <br />
+          Carolina Cova (Product owner):
+          <i>caromargui@gmail.com</i> <br />
+          Sebastian Rentería (Development Team):
+          <i>sren97@gmail.com </i> <br />
+          Diego Guisao (Development Team):
+          <i>diego.alexander.guisao@gmail.com </i> <br />
+          Santiago Puello (Development Team):
+          <i>sepuellov@unal.edu.co </i> <br />
+        </p>
+        <p>
+          Enlace al repositorio GitHub: <br />
+          <a href="https://github.com/caromargui/App---biblioteca"
+            >https://github.com/caromargui/App---biblioteca</a
+          >
+        </p>
       </article>
       <article>
-        <h2>Contactos</h2>
-        <font size="2"><p>Sebastian Barrera (Scrum Master):</p></font>
-        <font size="1">sbarrera.96@hotmail.com</font> <br />
-        <font size="2">Carolina Cova (Product owner):</font>
-        <font size="1">caromargui@gmail.com</font> <br />
-        <font size="2"> Sebastian Rentería (Development Team): </font>
-        <font size="1">sren97@gmail.com</font> <br />
-        <font size="2">Diego Guisao (Development Team):</font>
-        <font size="1">diego.alexander.guisao@gmail.com</font> <br />
-        <font size="2"> Santiago Puello (Development Team):</font>
-        <font size="1">sepuellov@unal.edu.co</font> <br />
+        <h2>Motivación de la página:</h2>
+        <p>
+          Página web dirigida a las bibliotecas comunitarias en la <br />
+          que se tenga usuario y contraseña para acceder a la información
+          disponible.
+        </p>
       </article>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+}
 </script>
 
 <style>
+
 </style>

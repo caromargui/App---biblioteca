@@ -38,11 +38,15 @@
               <router-link class="nav-link" to="/servicios">Servicios</router-link>
             </li>
             <li>
+              <router-link class="nav-link" to="/simulador">Simulador</router-link>
+            </li>
+            <li>
               <a class="nav-link" href="#">Préstamos</a>
             </li>
             <li>
               <a class="nav-link" href="#">Iniciar sesión</a>
             </li>
+            
           </ul>
         </div>
       </div>

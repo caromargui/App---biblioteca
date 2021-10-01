@@ -1,25 +1,19 @@
 <template>
-  <div class="simulador">
-    <Header />
-    <h1>Este es la vista dlesimulador</h1>
-    <Simulador />
-    <Piedepag />
+  <div>
+      <Header/>
+      <piedepag/>
   </div>
 </template>
 
 <script>
-import Header from '../components/Header.vue';
-import Piedepag from '../components/Piedepag.vue';
-import Simulador from './components/simulador.vue';
-
-// @ is an alias to /src
-
+import Header from '../components/Header.vue'
+import Piedepag from '../components/Piedepag.vue'
 export default {
-  name: "Simulador",
-  components: {
-    Piedepag,
-    Header,
-    Simulador
-  },
-};
+  components: { Piedepag, Header },
+
+}
 </script>
+
+<style>
+
+</style>

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Simulador from '../views/Simulador.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/servicios',
     name: 'servicios',
     component: () => import(/* webpackChunkName: "about" */ '../views/Servicios.vue')
+  }, 
+  {
+    path: '/simulador',
+    name: 'Simulador',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Simulador.vue')
   }
 ]
 

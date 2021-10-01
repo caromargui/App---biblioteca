@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-
+    
     <div id="login-overlay" class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body">
@@ -56,13 +56,15 @@
         </div>
       </div>
     </div>
+    <Piedepag/>
   </div>
 </template>
 
 <script>
 import Header from "./Header.vue";
+import Piedepag from './Piedepag.vue';
 export default {
-  components: { Header },
+  components: { Header, Piedepag },
 };
 
 
