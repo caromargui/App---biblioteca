@@ -56,15 +56,16 @@
         </div>
       </div>
     </div>
-    <Piedepag/>
+    <footer />
   </div>
 </template>
 
 <script>
+import Footer from './Footer.vue';
 import Header from "./Header.vue";
-import Piedepag from './Piedepag.vue';
+
 export default {
-  components: { Header, Piedepag },
+  components: { Header, Footer },
 };
 
 

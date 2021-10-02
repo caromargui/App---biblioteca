@@ -1,19 +1,18 @@
 <template>
   <div>
       <Header/>
-      <Piedepag/>
+      <Footer />
   </div>
 </template>
 
 <script>
 import Header from '../components/Header.vue'
-import Piedepag from '../components/Piedepag.vue'
+import Footer from '../components/Footer.vue'
 export default {
-  components: { Piedepag, Header },
+  components: {Header, Footer },
 
 }
 </script>
-
 <style>
 
 </style>
