@@ -1,20 +1,15 @@
 <template>
-  <div class="home">
+  
     <pagina-inicio />
-    
-  </div>
+  
 </template>
 
 <script>
-import PaginaInicio from '../components/PaginaInicio.vue'
-// @ is an alias to /src
-
+import PaginaInicio from "../components/PaginaInicio.vue";
 
 export default {
-  name: 'Home',
-  components: {
-    PaginaInicio
-    
-  }
-}
+  name: "Home",
+
+  components: { PaginaInicio },
+};
 </script>
