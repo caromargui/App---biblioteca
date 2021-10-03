@@ -1,0 +1,240 @@
+############# Pasos para configuración del backend ###############
+
+1. Crear una carpeta dentro de "dev" llamada "backend_nodejs"
+
+2. Ubicarnos dentro de la carpeta "backend_nodejs" en el terminal o cmd
+
+3. Se crea con "npm init -y" el package.json que permite instalar las dependencias
+(Se le coloca el -y para que le diga automáticamente si a todo)
+
+4. Instalar express (Framework para NodeJS) --> npm install express
+
+5. Se crea dentro de la carpeta "backend_nodejs" el archivo .gitignore que contiene
+en la primera línea --> node_modules
+
+6. Instalar nodemon --> npm install -g nodemon
+(El -g es para que se instale de manera global)
+
+7. Se crea una carpeta "src" dentro de "backend_nodejs", que contendrá 1 archivo 
+   index.js y dos carpetas con los siguientes nombres:
+   - controllers
+   - routers
+
+8. En el archivo index.js que se creó en el numeral 7, se pega esto:
+
+//Importar express
+const express = require('express');
+const serverRouter = require('./routers/serverRouter');
+
+class Server {
+    //constructor
+    constructor(){
+        this.app = express();
+        //Indicar el puerto por el que se ejecutará el servidor
+        this.app.set('port', process.env.PORT || 3000);
+        //Indicar que las solicitudes http se trabajará en JSON
+        this.app.use(express.json());
+        /**
+         * 
+         * ******************Rutas**********************
+         * 
+         * ******/
+        const router = express.Router();
+        router.get('/', (req, res)=>{
+            console.log("Nueva conexión");
+            res.status(200).json({message: "Hola mundo!"});
+        });
+        const serverR = new serverRouter.default();
+        
+        //añadir las rutas al servidor
+        this.app.use(serverR.router);
+        this.app.use(router);
+        //Levantar el servidor/correr el servidor
+        this.app.listen(this.app.get('port'), ()=>{
+            console.log("Servidor corriendo por el puerto => ", this.app.get('port'));
+        });
+    }
+}
+
+const objServer = new Server();
+
+9. Se crea dentro de la carpeta "controllers" el archivo de nombre "serverController.js" y se pega esta informacion:
+
+
+let users = [
+    {id: 1, nombre: "Geremias", apellido: "Beltran"},
+    {id: 2, nombre: "Isadora", apellido: "Montiel"},
+    {id: 3, nombre: "Laureano", apellido: "Gómez"},
+    {id: 4, nombre: "Carlos", apellido: "Castro"}
+]
+
+class ServerController{
+    constructor(){
+
+    }
+
+    register(req, res){ //req: request, res: response
+        //obtener datos
+        let { id, nombre, apellido } = req.body;
+        console.log("Usuario registrado con éxito");
+        console.table({id, nombre, apellido});
+        users.push(req.body);
+        res.status(200).json({
+            message: "Usuario registrado con éxito"
+        });
+    }
+
+    update(req, res){
+        let { id, nombre, apellido } = req.body;
+        console.table({id, nombre, apellido});
+        
+        users.forEach(element => {
+            if(id == element.id){
+                element.nombre = nombre;
+                element.apellido = apellido;
+            }
+        });
+
+        if(users != null){
+            res.status(200).json(users);
+        }else{
+            res.status(400).json({message: "Usuario no encontrado"});
+        }
+
+    }
+    
+    deleteUser(req, res){
+        let { id } = req.body;
+        console.table({id});
+        
+        let tempUser = [];
+        users.forEach(element => {
+            if(id != element.id){
+                tempUser.push(element);
+            }
+        });
+
+        users = tempUser;
+        if(users != null){
+            res.status(200).json(users);
+        }else{
+            res.status(400).json({message: "Usuario no encontrado"});
+        }
+    }
+
+    getUsers(req, res){
+        let id = req.params.id;
+        let userResp = null;
+        users.forEach(element => {
+            if(id == element.id){
+                userResp = element;
+            }
+        });
+
+        if(userResp != null){
+            res.status(200).json(userResp);
+        }else{
+            res.status(400).json({message: "Usuario no encontrado"});
+        }    
+    }
+
+    getAllUsers(req, res) {
+        res.status(200).json(users);
+    }
+}
+
+exports.default = ServerController;
+
+
+
+10. Se crea dentro de la carpeta "routers" el archivo de nombre "serverRouter.js" y se pega esta informacion:
+
+const express = require('express');
+const serverController = require("../controllers/serverController");
+
+class ServerRouter{
+    constructor(){
+        this.router = express.Router();
+        this.config();
+    }
+
+    config(){
+        const objServerC = new serverController.default();
+        this.router.get("/users", objServerC.getAllUsers);
+        this.router.get("/users/:id", objServerC.getUsers);
+        this.router.post("/users", objServerC.register);
+        this.router.put("/users", objServerC.update);
+        this.router.delete("/users", objServerC.deleteUser);        
+    }
+}
+
+exports.default = ServerRouter;
+
+
+
+11. Se hace una prueba con el comando "node src/index.js" en la carpeta C:\Users\USUARIO\Desktop\Java Projects VSC\dev\backend_nodejs>
+
+12. En el navegador con la página http://localhost:3000/ se puede verificar que esté funcionando
+(El 3000 lo saca el cmd o terminal y lo muestra así:
+Servidor corriendo por el puerto =>  3000
+Dependiendo de este número que aparezca se modifica la dirección http)
+Se puede ver:
+
+{"message":"Hola mundo!"}
+
+
+13. Con el fin de cambiar el comando de ejecución de nuestro servidor 
+   "node src/index.js o nodemon src/index.js" en el archivo package.json
+   se agrega a los scripts la siguiente información:
+
+   "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+   }
+
+   Con el fin de poder ejecutar con el comando "npm run ..."
+
+   "npm run start" ó "npm run dev"
+   (Con cualquiera de los dos ejecuta el servidor, pero con el segundo se detecta cualquier modificacion del
+   código y no se debe reiniciar el servidor
+   
+   Con el primero se hacen pruebas de que funciona, pero con el segundo es que se trabaja)
+
+
+14. Se instala Postman, en la página postman.com al dinal en Download the app. 
+Se descarga el archivo 
+
+15. Instalar Mongodb desde la página
+
+16. Crear carpetas database y person en el src, y crearle sus respectivos archivos con la
+llamada de la base de datos. Con esto de Mongo cambian varias cosas en 
+- "serverController.js": se modifican las funciones para que funcionen con mongodb
+- "index.js": se importó el mongoose y se creó el método para conectar con la base de datos  (BD), en el 
+constructor se llama a ese método de primero
+
+
+16. Instalar Mongoose
+
+npm install mongoose
+
+Se puede verificar si está o no instalado si se va a la parte de "dependencies" del package.json
+
+
+17. Visualizar la base de datos
+Una puede ser por consola, otra puede ser con mongodb compass
+
+18. Se abre mongodb compass y se le da click en conectar (Connect).
+Allí se puede ver la base de datos de forma gráfica.
+
+19. Se abre postman para probar que funciona lo que se hizo
+
+20. Crear nueva peticion (request) en el mas de la mitad
+
+21. Instalar cors: este permite la visibilidad de la informacion y no la bloquee.
+
+npm install cors
+
+   
+###############################################
+Códigos de respuesta
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
