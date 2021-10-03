@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <a class="navbar-brand col-3" href="#">
           <img
-            src="./logobiblioteca.png"
+            src="./img/logobiblioteca.png"
             alt=""
             width="116"
             class="d-inline-block align-text-center"
@@ -44,7 +44,7 @@
               <a class="nav-link" href="#">Préstamos</a>
             </li>
             <li>
-              <a class="nav-link" href="#">Iniciar sesión</a>
+              <router-link class="nav-link" to="/login">Iniciar sesión</router-link>
             </li>
             
           </ul>

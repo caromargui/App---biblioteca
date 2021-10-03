@@ -26,10 +26,10 @@
       <!-- The slideshow/carousel -->
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./libros.jpg" class="d-block" style="width: 100%" />
+          <img src="./img/libros.jpg" class="d-block" style="width: 100%" />
         </div>
         <div class="carousel-item">
-          <img src="./banner.jpg" class="d-block" style="width: 100%" />
+          <img src="./img/banner.jpg" class="d-block" style="width: 100%" />
         </div>
         <div class="carousel-item">
           <div
@@ -75,7 +75,7 @@
       <!-- inicio sección de servicios -->
       <div id="servicios" class="services-section">
         <article class="services-info">
-          <img class="services-info__imagen" src="./loan.png" alt="" />
+          <img class="services-info__imagen" src="./img/loan.png" alt="" />
           <h2 class="services-info__title">Simulador</h2>
           <p class="services-info__text">
             En esta sección podrás simular las cuotas de tu prestamo bancario y
@@ -83,7 +83,7 @@
           </p>
         </article>
         <article class="services-info">
-          <img class="services-info__imagen" src="./logocurso.png" alt="" />
+          <img class="services-info__imagen" src="./img/logocurso.png" alt="" />
           <h2 class="services-info__title">Cursos</h2>
           <p class="services-info__text">
             En esta sección podrás encontrar todo los cursos disponibles y los
@@ -91,7 +91,7 @@
           </p>
         </article>
         <article class="services-info">
-          <img class="services-info__imagen" src="./logolibros.png" alt="" />
+          <img class="services-info__imagen" src="./img/logolibros.png" alt="" />
           <h2 class="services-info__title">Préstamos</h2>
           <p class="services-info__text">
             En esta sección podrás acceder a los servicios relacionados con los
@@ -188,55 +188,16 @@
       <!-- fin sección de noticias -->
     </div>
     <!-- Inicio pie del sitio -->
-    <div class="seccion-pie">
-      <div class="logo-container">
-        <!-- <a> enlaza la imagen con la página de inicio -->
-        <a href="">
-          <img
-            class="center"
-            src="./logobiblioteca.png"
-            alt="Logo Bibilioteca Comunitaria"
-          />
-        </a>
-      </div>
-      <article>
-        <h2>Contactanos</h2>
-        <p>
-          Sebastian Barrera (Scrum Master): <i>sbarrera.96@hotmail.com</i>
-          <br />
-          Carolina Cova (Product owner):
-          <i>caromargui@gmail.com</i> <br />
-          Sebastian Rentería (Development Team):
-          <i>sren97@gmail.com </i> <br />
-          Diego Guisao (Development Team):
-          <i>diego.alexander.guisao@gmail.com </i> <br />
-          Santiago Puello (Development Team):
-          <i>sepuellov@unal.edu.co </i> <br />
-        </p>
-        <p>
-          Enlace al repositorio GitHub: <br />
-          <a href="https://github.com/caromargui/App---biblioteca"
-            >https://github.com/caromargui/App---biblioteca</a
-          >
-        </p>
-      </article>
-      <article>
-        <h2>Motivación de la página:</h2>
-        <p>
-          Página web dirigida a las bibliotecas comunitarias en la <br />
-          que se tenga usuario y contraseña para acceder a la información
-          disponible.
-        </p>
-      </article>
-    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from './Footer.vue';
 import Header from "./Header.vue";
 export default {
   name: "PaginaInicio",
-  components: { Header },
+  components: { Header, Footer },
   data: () => {
     return {};
   },

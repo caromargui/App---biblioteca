@@ -11,7 +11,7 @@ import Footer from '../components/Footer.vue'
 
 
 export default {
-  components: {Header, Footer,Simulador, Simulador },
+  components: {Header, Footer},
 
 }
 </script>

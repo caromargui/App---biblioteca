@@ -7,7 +7,7 @@
         <a href="">
           <img
             class="center"
-            src="./logobiblioteca.png"
+            src="./img/logobiblioteca.png"
             alt="Logo Bibilioteca Comunitaria"
           />
         </a>
@@ -33,14 +33,7 @@
           >
         </p>
       </article>
-      <article>
-        <h2>Motivación de la página:</h2>
-        <p>
-          Página web dirigida a las bibliotecas comunitarias en la <br />
-          que se tenga usuario y contraseña para acceder a la información
-          disponible.
-        </p>
-      </article>
+      
     </div>
   </div>
 </template>
