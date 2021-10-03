@@ -84,7 +84,7 @@
         </article>
         <article class="services-info">
           <img class="services-info__imagen" src="./logocurso.png" alt="" />
-          <h2 class="services-info__title">Cursos</h2>
+          <h2 class="services-info__title"><router-link class="nav-link" to="/Cursos">Cursos</router-link></h2>
           <p class="services-info__text">
             En esta sección podrás encontrar todo los cursos disponibles y los
             cursos ya finalizados.
