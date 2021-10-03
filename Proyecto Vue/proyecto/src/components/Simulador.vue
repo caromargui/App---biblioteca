@@ -115,14 +115,16 @@
     message: 'Email must be valid',
   })
 
+
   export default {
+    name: "Simulador",
     components: {
       ValidationProvider,
       ValidationObserver,
     },
     data: () => ({
-      name: '',
-      phoneNumber: '',
+      valor: '',
+      cuotas: '',
       email: '',
       select: null,
       items: [
@@ -139,8 +141,8 @@
         this.$refs.observer.validate()
       },
       clear () {
-        this.name = ''
-        this.phoneNumber = ''
+        this.valor = ''
+        this.cuotas= ''
         this.email = ''
         this.select = null
         this.checkbox = null
