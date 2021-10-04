@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Simulador from '../views/Simulador.vue'
 import InicioSesion from '../views/InicioSesion.vue'
+import Cursos from '../views/Cursos.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,12 @@ const routes = [
     path: '/login',
     name: 'InicioSesion',
     component: () => import(/* webpackChunkName: "about" */ '../views/InicioSesion.vue')
+  },
+  {
+    path: '/Cursos',
+    name: 'Cursos',
+    component: Cursos
+
   }
 ]
 
