@@ -35,7 +35,7 @@
               <router-link class="nav-link" to="/about">About</router-link>
             </li>
             <li>
-              <router-link class="nav-link" to="/servicios">Servicios</router-link>
+              <router-link class="nav-link" to="/cursos">Cursos</router-link>
             </li>
             <li>
               <router-link class="nav-link" to="/simulador">Simulador</router-link>
