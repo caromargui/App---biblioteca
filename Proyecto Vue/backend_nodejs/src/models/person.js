@@ -8,12 +8,12 @@ var personSchema = new schema({
     apellido: {
         type: String
     },
-    edad: {
-        type: Number
-    },
     email: {
         type: String
     },
+    contraseña:{
+        type: String
+    }
 },{
     collection: 'personas'
 });
