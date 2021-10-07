@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Simulador from '../views/Simulador.vue'
 import InicioSesion from '../views/InicioSesion.vue'
 import Cursos from '../views/Cursos.vue'
+import Prestamos from '../views/Prestamos.vue'
 
 Vue.use(VueRouter)
 
@@ -40,7 +41,12 @@ const routes = [
     path: '/Cursos',
     name: 'Cursos',
     component: Cursos
-
+  },
+  {
+    path: '/Prestamos',
+    name: 'Prestamos',
+    component: Prestamos 
+    
   }
 ]
 
