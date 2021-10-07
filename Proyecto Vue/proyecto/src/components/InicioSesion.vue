@@ -38,6 +38,7 @@
                             >INICIAR SESIÓN</v-btn
                           >
                         </div>
+                        <br />
                       </v-col>
                       <v-col cols="12" md="4" class="light-blue accent-3">
                         <v-card-text class="white--text mt-12">
@@ -67,7 +68,7 @@
                           </h5>
                         </v-card-text>
                         <div class="text-center">
-                          <v-btn rounded outlined dark @click="step--"
+                          <v-btn rounded outlined dark @click="step-- + reset()"
                             >INICIAR SESIÓN</v-btn
                           >
                         </div>
@@ -76,37 +77,68 @@
                       <v-col cols="12" md="8">
                         <v-card-text class="mt-12">
                           <h1 class="text-center">Crear usuario</h1>
-                          <v-form>
+                          <v-form ref="form" v-model="valid" lazy-validation>
                             <v-text-field
                               label="Nombre"
                               name="Name"
+                              :rules="nameRules"
                               prepend-icon="mdi-account"
                               type="text"
                               color="light-blue accent-3"
+                              required
+                            />
+                            <v-text-field
+                              label="Apellido"
+                              name="Surname"
+                              :rules="surnameRules"
+                              prepend-icon="mdi-account"
+                              type="text"
+                              color="light-blue accent-3"
+                              required
                             />
                             <v-text-field
                               label="Email"
                               name="Email"
+                              :rules="emailRules"
                               prepend-icon="mdi-email"
                               type="text"
                               color="light-blue accent-3"
+                              required
                             />
-
                             <v-text-field
-                              id="password"
+                              v-model="password1"
+                              :rules="passwordRules"
+                              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                              :type="show1 ? 'text' : 'password'"
                               label="Contraseña"
-                              name="password"
+                              prepend-icon="mdi-lock"
+                              @click:append="show1 = !show1"
+                              required
+                            />
+                            <v-text-field
+                              v-model="password2"
+                              label="Verificar Contraseña"
+                              :rules="[passwordRules, passwordConfirmationRule]"
+                              name="ValidatePassword"
                               prepend-icon="mdi-lock"
                               type="password"
                               color="light-blue accent-3"
+                              required
                             />
+                            <br />
+                            <div class="text-center mt-3">
+                              <v-btn
+                                class="text-center mt-n5"
+                                rounded
+                                color="light-blue accent-3"
+                                dark
+                                :disabled="!valid"
+                                @click="validate"
+                                >REGISTRARME</v-btn
+                              >
+                            </div>
                           </v-form>
                         </v-card-text>
-                        <div class="text-center mt-n5">
-                          <v-btn rounded color="light-blue accent-3" dark
-                            >REGISTRARME</v-btn
-                          >
-                        </div>
                       </v-col>
                     </v-row>
                   </v-window-item>
@@ -117,26 +149,95 @@
         </v-container>
       </v-content>
     </v-app>
+
+    <v-simple-table>
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Apellido</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Contraseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in users" :key="item._id">
+            <td class="text-center">{{ item.nombre }}</td>
+            <td class="text-center">{{ item.apellido }}</td>
+            <td class="text-center">{{ item.email }}</td>
+            <td class="text-center">{{ item.contraseña }}</td>
+          </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
   </div>
 </template>
 
 <script>
 import Header from "./Header.vue";
+import store from "../store/index.js";
 
 export default {
   components: { Header },
   data: () => ({
+    valid: true,
     step: 1,
     show1: false,
-    password: "",
-    // rules: {
-    //   required: value => !!value || 'Required.',
-    //   min: v => v.length >= 8 || 'Min 8 characters',
-    //   emailMatch: () => (`The email and password you entered don't match`),
-    // },
+    password1: "",
+    password2: "",
+    nameRules: [(v) => !!v || "*Nombre es obligatorio"],
+    surnameRules: [(v) => !!v || "*Apellido es obligatorio"],
+    emailRules: [
+      (v) => !!v || "*Email es obligatorio",
+      (v) => /.+@.+\..+/.test(v) || "*E-mail debe ser válido",
+    ],
+    passwordRules: [(v) => !!v || "*Contraseña es obligatoria"],
   }),
   props: {
     source: String,
+  },
+  methods: {
+    crearUsuario() {
+      let obj = {
+        nombre: this.nombre,
+        apellido: this.apellido,
+        edad: this.edad,
+        email: this.email,
+      };
+      store.dispatch("setPersonajes", obj).then(() => {
+        store.dispatch("getPersonajes");
+        this.nombre = "";
+        this.apellido = "";
+        this.edad = "";
+        this.email = "";
+      });
+    },
+    validate() {
+      this.$refs.form.validate();
+    },
+    reset() {
+      this.$refs.form.reset();
+    },
+    resetValidation() {
+      this.$refs.form.resetValidation();
+    },
+  },
+
+  created: () => {
+    //dispatch: accede a las acciones del store
+    store.dispatch("getUsers");
+  },
+
+  computed: {
+    users: () => {
+      return store.state.users;
+    },
+
+    passwordConfirmationRule() {
+      return () =>
+        this.password1 === this.password2 ||
+        "*Las contraseñas no coinciden. Inténtelo nuevamente.";
+    },
   },
 };
 </script>
