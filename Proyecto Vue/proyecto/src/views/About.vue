@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <Header />
-    <h1>This is an about page</h1>
-    <Contactenos />
+    <h1>Contáctenos</h1>
+    <contactenos />
   </div>
 </template>
 

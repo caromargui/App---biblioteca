@@ -21,15 +21,17 @@
           hide-details="auto"
           v-model="cuotas"
         ></v-text-field>
-       <input type="number" v-model="cuotas"/>
-       <br/>
       </v-col>
       <v-col>
-        <v-card
-          elevation="2"
-          outlined
-          shaped
-        ></v-card>
+       <v-card
+          class="mx-auto"
+          max-width="400"
+       >
+       <v-img
+         src="https://como-funciona.com/wp-content/uploads/2020/11/creditos-de-nomina-800x400.jpg"
+         height="200px"
+       ></v-img>   
+       </v-card>  
       </v-col>
     </v-row>
     <v-row>
@@ -43,7 +45,6 @@
       >Simular </v-btn>
       </v-col>
     </v-row>
-    <br/>
     {{valorcuota}}
   </v-container>
 </template>
@@ -68,7 +69,8 @@ export default {
   },
   methods: { 
       cuotafija(){
-      this.valorcuota=((parseFloat (this.valorprestamo))*(0,796575374*((1+0,796575374)^(parseFloat (this.cuotas)))))/(((1+0,796575374)^(parseFloat(this.cuotas)))-1);
+      this.valorcuota=((parseFloat (this.valorprestamos))/(parseFloat (this.cuotas)));
+      //<!---this.valorcuota=((parseFloat (this.valorprestamos))*(0,796575374*((1+0,796575374)^(parseFloat (this.cuotas)))))/(((1+0,796575374)^(parseFloat(this.cuotas)))-1);
     },
 
   },
