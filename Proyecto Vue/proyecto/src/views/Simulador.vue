@@ -2,6 +2,7 @@
   <div>
       <Header/>
       <simulador/>
+      <br>
       <Footer />
   </div>
 </template>

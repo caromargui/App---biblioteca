@@ -52,7 +52,21 @@
       >Simular </v-btn>
       </v-col>
     </v-row>
-    {{parseFloat(valorcuota).toFixed(2)}}
+    <v-row>
+    <v-col></v-col>
+    <v-col class="text-center" 
+      v-for="n in 1"
+      :key="n"
+      cols="6"><v-card
+      class="pa-1"
+      elevation="6"
+      outlined
+      style="background-color: lightgray;"
+      shaped>
+    <h3>Valor Cuota</h3>
+    <h4>{{parseFloat(valorcuota).toFixed(2)}} </h4></v-card></v-col>
+    <v-col></v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -81,10 +95,10 @@ export default {
   },
   methods: { 
       cuotafija(){
-      this.valorcuota=((parseFloat(this.valorprestamo))*(parseFloat(this.interes)))/(1-(1+(parseFloat (this.interes)))^(parseFloat(this.cuotas)*-1));
-      //<!---this.valorcuota=((parseFloat (this.valorprestamos))* 
+     //solucion sencilla<!---this.valorcuota=((parseFloat(this.valorprestamo))*(parseFloat(this.interes)))/(1-(1+(parseFloat (this.interes)))^(parseFloat(this.cuotas)*-1));
+      this.valorcuota=((parseFloat (this.valorprestamo)*(1+((parseFloat(this.interes))/100)))^(parseFloat(this.cuotas))/parseFloat(this.cuotas));
       //<!---(0,796575374*((1+0,796575374)^(parseFloat (this.cuotas)))))/(((1+0,796575374)^(parseFloat(this.cuotas)))-1);
-    },
+    }
 
   },
 } 
