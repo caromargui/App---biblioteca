@@ -76,7 +76,7 @@
       <div id="servicios" class="services-section">
         <article class="services-info">
           <img class="services-info__imagen" src="./img/loan.png" alt="" />
-          <h2 class="services-info__title">Simulador</h2>
+          <h2 class="services-info__title"><router-link to="/simulador">Simulador</router-link></h2>
           <p class="services-info__text">
             En esta sección podrás simular las cuotas de tu prestamo bancario y
             evaluar su solicitud

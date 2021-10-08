@@ -12,7 +12,14 @@
           label="Valor del préstamo"
           :rules="rules1"
           hide-details="auto"
-          v-model="valorprestamos"
+          v-model="valorprestamo"
+        ></v-text-field>
+        <v-text-field
+          type="number"
+          label="Interes mensual efectivo (%)"
+          :rules="rules3"
+          hide-details="auto"
+          v-model="interes"
         ></v-text-field>
         <v-text-field
           type="number"
@@ -45,7 +52,7 @@
       >Simular </v-btn>
       </v-col>
     </v-row>
-    {{valorcuota}}
+    {{parseFloat(valorcuota).toFixed(2)}}
   </v-container>
 </template>
 
@@ -64,13 +71,19 @@ export default {
         rules2:[
           value => !!value||'Cantidad de cuotas es un valor obligatorio',
           value => (value && value >= 12 && value <=120)||'La cantidas de cuotas debe ser mayor mayor a 12 y menor a 120'
-        ]
+        ],
+        rules3:[
+          value => !!value||'Tasa anual efectiva es obligatoria',
+          value => (value && value <=30)||'La TAE no puede ser mayor a la tasa de usura '
+        ],
+        
       };
   },
   methods: { 
       cuotafija(){
-      this.valorcuota=((parseFloat (this.valorprestamos))/(parseFloat (this.cuotas)));
-      //<!---this.valorcuota=((parseFloat (this.valorprestamos))*(0,796575374*((1+0,796575374)^(parseFloat (this.cuotas)))))/(((1+0,796575374)^(parseFloat(this.cuotas)))-1);
+      this.valorcuota=((parseFloat(this.valorprestamo))*(parseFloat(this.interes)))/(1-(1+(parseFloat (this.interes)))^(parseFloat(this.cuotas)*-1));
+      //<!---this.valorcuota=((parseFloat (this.valorprestamos))* 
+      //<!---(0,796575374*((1+0,796575374)^(parseFloat (this.cuotas)))))/(((1+0,796575374)^(parseFloat(this.cuotas)))-1);
     },
 
   },
