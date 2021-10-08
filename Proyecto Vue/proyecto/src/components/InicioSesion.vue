@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header login="verdadero"></Header>
 
     <v-app id="inspire">
       <v-content>
@@ -18,6 +18,7 @@
                             <v-text-field
                               label="Email"
                               name="Email"
+                              v-model="UserEmail"
                               prepend-icon="mdi-email"
                               type="text"
                               color="light-blue accent-3"
@@ -34,7 +35,11 @@
                           </v-form>
                         </v-card-text>
                         <div class="text-center mt-3">
-                          <v-btn rounded color="light-blue accent-3" dark
+                          <v-btn
+                            rounded
+                            color="light-blue accent-3"
+                            dark
+                            @click="loginValidation"
                             >INICIAR SESIÓN</v-btn
                           >
                         </div>
@@ -81,6 +86,7 @@
                             <v-text-field
                               label="Nombre"
                               name="Name"
+                              v-model="nombre"
                               :rules="nameRules"
                               prepend-icon="mdi-account"
                               type="text"
@@ -90,6 +96,7 @@
                             <v-text-field
                               label="Apellido"
                               name="Surname"
+                              v-model="apellido"
                               :rules="surnameRules"
                               prepend-icon="mdi-account"
                               type="text"
@@ -99,6 +106,7 @@
                             <v-text-field
                               label="Email"
                               name="Email"
+                              v-model="email"
                               :rules="emailRules"
                               prepend-icon="mdi-email"
                               type="text"
@@ -133,9 +141,20 @@
                                 color="light-blue accent-3"
                                 dark
                                 :disabled="!valid"
-                                @click="validate"
+                                @mouseover="validate"
+                                @click="reset + crearUsuario()"
                                 >REGISTRARME</v-btn
                               >
+                            </div>
+                            <div v-if="confirmacion">
+                              <br />
+                              <v-alert
+                                :value="true"
+                                type="success"
+                                icon="mdi-account-check"
+                              >
+                                El usuario se ha registrado con éxito
+                              </v-alert>
                             </div>
                           </v-form>
                         </v-card-text>
@@ -158,6 +177,8 @@
             <th class="text-center">Apellido</th>
             <th class="text-center">Email</th>
             <th class="text-center">Contraseña</th>
+            <th class="text-center">Administrador</th>
+            <th class="text-center">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -166,6 +187,16 @@
             <td class="text-center">{{ item.apellido }}</td>
             <td class="text-center">{{ item.email }}</td>
             <td class="text-center">{{ item.contraseña }}</td>
+            <td class="text-center">{{ item.administrador }}</td>
+            <td class="text-center">
+              <v-btn
+                @click="eliminarUsuario(item._id)"
+                color="error"
+                elevation="12"
+                rounded
+                >Eliminar</v-btn
+              >
+            </td>
           </tr>
         </tbody>
       </template>
@@ -183,8 +214,10 @@ export default {
     valid: true,
     step: 1,
     show1: false,
-    password1: "",
-    password2: "",
+    loginOK: false,
+    confirmacion: false,
+    password: "aaaaaa",
+    UserEmail: "sbarrera.96@hotmail.com",
     nameRules: [(v) => !!v || "*Nombre es obligatorio"],
     surnameRules: [(v) => !!v || "*Apellido es obligatorio"],
     emailRules: [
@@ -197,19 +230,23 @@ export default {
     source: String,
   },
   methods: {
+    eliminarUsuario(id) {
+      let obj = { id };
+      store.dispatch("deleteUsers", obj).then(() => {
+        store.dispatch("getUsers");
+      });
+    },
     crearUsuario() {
       let obj = {
         nombre: this.nombre,
         apellido: this.apellido,
-        edad: this.edad,
         email: this.email,
+        contraseña: this.password1,
       };
-      store.dispatch("setPersonajes", obj).then(() => {
-        store.dispatch("getPersonajes");
-        this.nombre = "";
-        this.apellido = "";
-        this.edad = "";
-        this.email = "";
+      store.dispatch("setUsers", obj).then(() => {
+        store.dispatch("getUsers");
+        this.reset();
+        this.confirmacion = true;
       });
     },
     validate() {
@@ -217,9 +254,32 @@ export default {
     },
     reset() {
       this.$refs.form.reset();
+      this.confirmacion=false
     },
     resetValidation() {
       this.$refs.form.resetValidation();
+    },
+    loginValidation() {
+      console.log("Si está en la BD");
+
+      console.log(this.users);
+      for (var i = 0; i < this.users.length; i++) {
+        console.log(this.users[i].email);
+        if (
+          String(this.users[i].email) === this.UserEmail &&
+          this.users[i].contraseña === this.password
+        ) {
+          console.log("Esta el usuario");
+          console.log(this.users[i].email);
+          console.log(this.users[i].contraseña);
+          var aux = true;
+          break;
+        } else {
+          var aux = false;
+        }
+      }
+      console.log(aux);
+      return (this.loginOK = aux);
     },
   },
 
@@ -239,6 +299,7 @@ export default {
         "*Las contraseñas no coinciden. Inténtelo nuevamente.";
     },
   },
+  
 };
 </script>
 

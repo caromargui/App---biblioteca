@@ -21,6 +21,26 @@ export default new Vuex.Store({
       console.log(data);
       commit('setUsers', data);
     },
+    //Eliminar personaje mediante su id
+    async deleteUsers({commit}, users){
+      const peticion = await fetch('http://localhost:3000/users', {
+        method: 'DELETE',
+        headers: { 
+          'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(users)
+      });
+    },
+    //Agregar Personajes
+    async setUsers({ commit }, users) {
+      const peticion = await fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(users)
+      });      
+    },
   },
   modules: {
   }

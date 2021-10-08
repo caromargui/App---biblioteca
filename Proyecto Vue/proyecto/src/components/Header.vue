@@ -38,15 +38,21 @@
               <router-link class="nav-link" to="/cursos">Cursos</router-link>
             </li>
             <li>
-              <router-link class="nav-link" to="/simulador">Simulador</router-link>
+              <router-link class="nav-link" to="/simulador"
+                >Simulador</router-link
+              >
             </li>
             <li>
               <a class="nav-link" href="#">Préstamos</a>
             </li>
+            <div>
+              {{login}}
+            </div>
             <li>
-              <router-link class="nav-link" to="/login">Iniciar sesión</router-link>
+              <router-link class="nav-link" to="/login"
+                >Iniciar sesión</router-link
+              >
             </li>
-            
           </ul>
         </div>
       </div>
@@ -55,10 +61,19 @@
 </template>
 
 <script>
+
+
 export default {
   name: "Header",
+  
+  components: {},
+  methods: {
+    
+  },
+  props: ['login']
 };
 </script>
 
+    
 <style>
 </style>
