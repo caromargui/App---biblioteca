@@ -13,6 +13,10 @@ var personSchema = new schema({
     },
     contraseña:{
         type: String
+    },
+    administrador:{
+        type: Boolean,
+        default: false
     }
 },{
     collection: 'personas'
