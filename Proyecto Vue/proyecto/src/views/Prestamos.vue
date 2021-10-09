@@ -78,6 +78,7 @@ export default {
   components: { Header, Footer, InicioSesion },
 
   data() {
+
     return {
       desserts: [
         {
@@ -116,6 +117,9 @@ export default {
   created: () => {
     store.commit("setCurrentView", "/prestamos");
     console.log(store.state.view);
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
 };
 </script>

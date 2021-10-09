@@ -8,7 +8,7 @@ export default new Vuex.Store({
     users: [],
     nombreLogin: "Este es el ensayo",
     loginOK: false,
-    view: ""
+    view: "/"
   },
   mutations: {
     setUsers(state, payload) {

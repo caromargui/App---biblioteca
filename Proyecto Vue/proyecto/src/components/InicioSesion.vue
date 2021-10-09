@@ -233,6 +233,11 @@ export default {
     loginOK: false,
     confirmacion: false,
     nombreLogin: "",
+    nombre:"",
+    apellido:"",
+    email:"",
+    password1:"",
+    password2:"",
     password: "aaaaaa",
     UserEmail: "sbarrera.96@hotmail.com",
     aux1: false,
@@ -294,6 +299,7 @@ export default {
           store.commit("cambiarUsuario", this.users[i].nombre);
           var aux = true;
           store.commit("cambiarEstadoLogin", aux);
+          this.aux1 = false;
           break;
         } else {
           var aux = false;
@@ -305,9 +311,11 @@ export default {
     },
     login() {
       this.loginValidation();
-      setTimeout(function () {
-        router.push(store.state.view);
-      }, 500);
+      if ((this.loginOK = true)) {
+        setTimeout(function () {
+          router.push(store.state.view);
+        }, 500);
+      }
     },
   },
 

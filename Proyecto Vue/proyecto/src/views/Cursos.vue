@@ -199,6 +199,9 @@ export default {
     store.commit("setCurrentView", "/Cursos");
     console.log(store.state.view);
   },
+  mounted (){
+    window.scrollTo(0,0)
+  }
 };
 </script>
 
