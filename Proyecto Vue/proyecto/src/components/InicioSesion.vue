@@ -306,7 +306,7 @@ export default {
     login() {
       this.loginValidation();
       setTimeout(function () {
-        router.push("/");
+        router.push(store.state.view);
       }, 500);
     },
   },

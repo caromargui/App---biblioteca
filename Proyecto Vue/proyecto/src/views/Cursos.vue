@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <Header :nlogin=nombreLogin :var1=loginOK></Header>
+  <div v-if="$store.state.loginOK == true">
+    <Header
+      :nlogin="$store.state.nombreLogin"
+      :var1="$store.state.loginOK"
+    ></Header>
     <v-container>
       <v-row justify="center">
         <v-col cols="auto">
@@ -36,7 +39,11 @@
           <!-- Inicia lista -->
 
           <v-sheet class="mx-auto" max-width="1400">
-            <v-slide-group center-active next-icon = "mdi-chevron-right" prev-icon = "mdi-chevron-left">
+            <v-slide-group
+              center-active
+              next-icon="mdi-chevron-right"
+              prev-icon="mdi-chevron-left"
+            >
               <v-slide-item
                 v-for="(item, i) in searching"
                 :key="i"
@@ -103,13 +110,18 @@
 
     <Footer />
   </div>
+  <div v-else>
+    <inicio-sesion />
+  </div>
 </template>
 
 <script>
 import Footer from "../components/Footer.vue";
 import Header from "../components/Header.vue";
+import store from "../store/index.js";
+import InicioSesion from "../views/InicioSesion.vue";
 export default {
-  components: { Header, Footer },
+  components: { Header, Footer, InicioSesion },
   data: () => ({
     items: [
       {
@@ -181,6 +193,11 @@ export default {
         return text.indexOf(search) > -1;
       });
     },
+  },
+
+  created: () => {
+    store.commit("setCurrentView", "/Cursos");
+    console.log(store.state.view);
   },
 };
 </script>

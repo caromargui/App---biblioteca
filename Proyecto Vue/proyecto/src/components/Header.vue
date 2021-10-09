@@ -64,7 +64,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <li>
-                  <v-btn tile text @click="logOut" to="/">
+                  <v-btn tile text @click="logOut">
                     <v-icon> mdi-logout </v-icon>
                     Salir
                   </v-btn>
@@ -84,6 +84,9 @@
 </template>
 
 <script>
+import store from "../store/index.js";
+import router from "../router";
+
 export default {
   name: "Header",
   components: {},
@@ -94,7 +97,11 @@ export default {
   methods: {
     logOut() {
       console.log("Si está en la BD");
-      this.var1=false
+      store.commit("cambiarEstadoLogin", false);
+      store.commit("cambiarUsuario", ""); 
+      setTimeout(function () {
+        router.push("/");
+      }, 500);     
     },
   },
 };
