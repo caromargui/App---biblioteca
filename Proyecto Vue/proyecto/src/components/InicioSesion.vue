@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header login="verdadero"></Header>
+    <Header :nlogin=nombreLogin :var1=loginOK></Header>
 
     <v-app id="inspire">
       <v-content>
@@ -216,6 +216,7 @@ export default {
     show1: false,
     loginOK: false,
     confirmacion: false,
+    nombreLogin: "",
     password: "aaaaaa",
     UserEmail: "sbarrera.96@hotmail.com",
     nameRules: [(v) => !!v || "*Nombre es obligatorio"],
@@ -272,6 +273,7 @@ export default {
           console.log("Esta el usuario");
           console.log(this.users[i].email);
           console.log(this.users[i].contraseña);
+          console.log(this.users[i].nombre)
           var aux = true;
           break;
         } else {
@@ -279,7 +281,7 @@ export default {
         }
       }
       console.log(aux);
-      return (this.loginOK = aux);
+      return (this.loginOK = aux,this.nombreLogin=this.users[i].nombre);
     },
   },
 

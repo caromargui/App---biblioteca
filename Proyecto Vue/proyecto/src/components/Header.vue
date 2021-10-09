@@ -45,13 +45,30 @@
             <li>
               <a class="nav-link" href="#">Préstamos</a>
             </li>
-            <div>
-              {{login}}
+            <!-- <div class="nav-link">
+              {{ nlogin }}
             </div>
-            <li>
-              <router-link class="nav-link" to="/login"
-                >Iniciar sesión</router-link
+            <div class="nav-link">
+              {{ var1 }}
+            </div> -->
+
+            <li class="nav-item dropdown" v-if="var1 == true">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
+                {{ nlogin }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+              </ul>
+            </li>
+            <li v-else>
+              <router-link class="nav-link" to="/login">Iniciar sesión</router-link>
             </li>
           </ul>
         </div>
@@ -61,16 +78,11 @@
 </template>
 
 <script>
-
-
 export default {
   name: "Header",
-  
   components: {},
-  methods: {
-    
-  },
-  props: ['login']
+  methods: {},
+  props: ["nlogin", "var1"],
 };
 </script>
 
