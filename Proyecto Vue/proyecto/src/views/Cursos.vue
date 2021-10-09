@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header :nlogin=nombreLogin :var1=loginOK></Header>
     <v-container>
       <v-row justify="center">
         <v-col cols="auto">

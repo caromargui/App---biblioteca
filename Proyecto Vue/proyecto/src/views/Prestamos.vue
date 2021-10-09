@@ -1,6 +1,6 @@
 <template>
   <div>      
-    <header />
+    <Header :nlogin=nombreLogin :var1=loginOK></Header>
 
     <v-container>
 

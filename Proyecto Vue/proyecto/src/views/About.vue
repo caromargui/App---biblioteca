@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Header />
+    <Header :nlogin=nombreLogin :var1=loginOK></Header>
     <h1>Contáctenos</h1>
     <contactenos />
   </div>
