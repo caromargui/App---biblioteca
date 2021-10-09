@@ -43,7 +43,9 @@
               >
             </li>
             <li>
-              <a class="nav-link" href="#">Préstamos</a>
+              <router-link class="nav-link" to="/prestamos"
+                >Préstamos</router-link
+              >
             </li>
             <!-- <div class="nav-link">
               {{ nlogin }}
