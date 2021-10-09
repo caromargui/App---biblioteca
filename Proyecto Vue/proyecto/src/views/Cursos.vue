@@ -36,7 +36,7 @@
           <!-- Inicia lista -->
 
           <v-sheet class="mx-auto" max-width="1400">
-            <v-slide-group center-active show-arrows>
+            <v-slide-group center-active next-icon = "mdi-chevron-right" prev-icon = "mdi-chevron-left">
               <v-slide-item
                 v-for="(item, i) in searching"
                 :key="i"
