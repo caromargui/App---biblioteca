@@ -47,13 +47,6 @@
                 >Préstamos</router-link
               >
             </li>
-            <!-- <div class="nav-link">
-              {{ nlogin }}
-            </div>
-            <div class="nav-link">
-              {{ var1 }}
-            </div> -->
-
             <li class="nav-item dropdown" v-if="var1 == true">
               <a
                 class="nav-link dropdown-toggle"
@@ -62,15 +55,26 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                aria-haspopup="true"
               >
-                {{ nlogin }}
+                <strong>
+                  {{ nlogin }}
+                </strong>
+                <v-icon>mdi-account</v-icon>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-              </ul>
+              <div class="dropdown-menu dropdown-menu-right">
+                <li>
+                  <v-btn tile text @click="logOut" to="/">
+                    <v-icon> mdi-logout </v-icon>
+                    Salir
+                  </v-btn>
+                </li>
+              </div>
             </li>
             <li v-else>
-              <router-link class="nav-link" to="/login">Iniciar sesión</router-link>
+              <router-link class="nav-link" to="/login"
+                >Iniciar sesión</router-link
+              >
             </li>
           </ul>
         </div>
@@ -83,10 +87,19 @@
 export default {
   name: "Header",
   components: {},
-  methods: {},
+  data: () => ({
+    
+  }),
   props: ["nlogin", "var1"],
+  methods: {
+    logOut() {
+      console.log("Si está en la BD");
+      this.var1=false
+    },
+  },
 };
 </script>
+
 
     
 <style>

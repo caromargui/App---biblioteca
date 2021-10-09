@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header :nlogin=$store.state.nombreLogin :var1=$store.state.loginOK></Header>
     <!-- Carousel Bootstrap -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
       <!-- Indicators/dots -->
@@ -76,7 +76,9 @@
       <div id="servicios" class="services-section">
         <article class="services-info">
           <img class="services-info__imagen" src="./img/loan.png" alt="" />
-          <h2 class="services-info__title"><router-link to="/simulador">Simulador</router-link></h2>
+          <h2 class="services-info__title">
+            <router-link to="/simulador">Simulador</router-link>
+          </h2>
           <p class="services-info__text">
             En esta sección podrás simular las cuotas de tu prestamo bancario y
             evaluar su solicitud
@@ -84,14 +86,20 @@
         </article>
         <article class="services-info">
           <img class="services-info__imagen" src="./img/logocurso.png" alt="" />
-          <h2 class="services-info__title"><router-link to="/cursos">Cursos</router-link></h2>
+          <h2 class="services-info__title">
+            <router-link to="/cursos">Cursos</router-link>
+          </h2>
           <p class="services-info__text">
             En esta sección podrás encontrar todo los cursos disponibles y los
             cursos ya finalizados.
           </p>
         </article>
         <article class="services-info">
-          <img class="services-info__imagen" src="./img/logolibros.png" alt="" />
+          <img
+            class="services-info__imagen"
+            src="./img/logolibros.png"
+            alt=""
+          />
           <h2 class="services-info__title">Préstamos</h2>
           <p class="services-info__text">
             En esta sección podrás acceder a los servicios relacionados con los
@@ -249,8 +257,9 @@
 </template>
 
 <script>
-import Footer from './Footer.vue';
+import Footer from "./Footer.vue";
 import Header from "./Header.vue";
+
 export default {
   name: "PaginaInicio",
   components: { Header, Footer },

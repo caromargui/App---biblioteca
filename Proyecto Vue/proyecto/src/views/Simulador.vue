@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Header/>
+      <Header :nlogin=nombreLogin :var1=loginOK></Header>
       <simulador/>
       <br>
       <Footer />
