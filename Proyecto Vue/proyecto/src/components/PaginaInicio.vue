@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Header :nlogin=$store.state.nombreLogin :var1=$store.state.loginOK></Header>
+    <Header
+      :nlogin="$store.state.nombreLogin"
+      :var1="$store.state.loginOK"
+    ></Header>
     <!-- Carousel Bootstrap -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
       <!-- Indicators/dots -->
@@ -109,20 +112,17 @@
       </div>
       <!-- fin sección de servicios -->
 
-
       <!-- inicio sección de noticias -->
       <div id="news" class="news-section">
         <v-card class="mx-auto" max-width="auto">
-          <v-system-bar color="indigo darken-2" dark>
+          <v-system-bar color="#089dc2">
             <v-spacer></v-spacer>
           </v-system-bar>
 
-          <v-toolbar color="indigo" dark>
-
-            <v-toolbar-title >Noticias</v-toolbar-title>
+          <v-toolbar color="#25294f">
+            <v-toolbar-title class = "noticias">Noticias</v-toolbar-title>
 
             <v-spacer></v-spacer>
-
           </v-toolbar>
 
           <v-container fluid>
@@ -142,7 +142,7 @@
                   </v-card-text>
 
                   <v-card-actions>
-                    <v-btn color="orange" text> Ver más </v-btn>
+                    <v-btn color="indigo" text> Ver más </v-btn>
                   </v-card-actions>
                 </v-card>
               </v-col>
@@ -153,61 +153,60 @@
       <!-- fin sección de noticias -->
     </div>
     <div>
-
-    <!-- Inicio sección integrantes -->  
-    <h1>Equipo 7  -  Grupo 32</h1>
+      <!-- Inicio sección integrantes -->
+      <h1>Equipo 7 - Grupo 32</h1>
       <v-row>
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="./img/Sebastian B.png" 
-          height="200px"></v-img>
-          <v-card-title>Sebastian Barrera</v-card-title>
-          <v-card-subtitle>Scrum Master</v-card-subtitle>
+            <v-img src="./img/Sebastian B.png" height="200px"></v-img>
+            <v-card-title>Sebastian Barrera</v-card-title>
+            <v-card-subtitle>Scrum Master</v-card-subtitle>
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="./img/Carolina.png" 
-          height="200px"></v-img>
-          <v-card-title>Carolina Cova</v-card-title>
-          <v-card-subtitle>Product Owner</v-card-subtitle>
+            <v-img src="./img/Carolina.png" height="200px"></v-img>
+            <v-card-title>Carolina Cova</v-card-title>
+            <v-card-subtitle>Product Owner</v-card-subtitle>
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" 
-          height="200px"></v-img>
-          <v-card-title>Sebastian Renteria</v-card-title>
-          <v-card-subtitle>Development team</v-card-subtitle>
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              height="200px"
+            ></v-img>
+            <v-card-title>Sebastian Renteria</v-card-title>
+            <v-card-subtitle>Development team</v-card-subtitle>
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="./img/Diego.png" 
-          height="200px"></v-img>
-          <v-card-title>Diego Guisao</v-card-title>
-          <v-card-subtitle>Development team</v-card-subtitle>
+            <v-img src="./img/Diego.png" height="200px"></v-img>
+            <v-card-title>Diego Guisao</v-card-title>
+            <v-card-subtitle>Development team</v-card-subtitle>
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" 
-          height="200px"></v-img>
-          <v-card-title>Santiago Puello</v-card-title>
-          <v-card-subtitle>Development team</v-card-subtitle>
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              height="200px"
+            ></v-img>
+            <v-card-title>Santiago Puello</v-card-title>
+            <v-card-subtitle>Development team</v-card-subtitle>
           </v-card>
         </v-col>
       </v-row>
-    
-    <!-- Fin sección integrantes -->
 
+      <!-- Fin sección integrantes -->
     </div>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <!-- Inicio pie del sitio -->
     <Footer />
   </div>
@@ -223,27 +222,31 @@ export default {
   data: () => ({
     cards: [
       {
-        title: "Startups",
+        title: "Startups: Perspectivas futuras",
         src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
-        resume: "Triunfarán aquellas startups que ofrezcan soluciones a través de tecnologías como Big Data, impresión 3D, robótica, realidad aumentada, Internet de las Cosas, Blockchain o ciberseguridad.",
+        resume:
+          "Triunfarán aquellas startups que ofrezcan soluciones a través de tecnologías como Big Data, impresión 3D, robótica, realidad aumentada, Internet de las Cosas, Blockchain o ciberseguridad...",
         flex: 6,
       },
       {
-        title: "La desertificación acaba con los bosques del Amazonas.",
+        title: "La desertificación acaba con los bosques del Amazonas",
         src: "https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg",
-        resume: "Los jóvenes de la generación climática elaboran un plan de choque para contrarrestar la deforestación. En la medida de lo posible.",
+        resume:
+          "Los jóvenes de la generación climática elaboran un plan de choque para contrarrestar la deforestación. En la medida de lo posible...",
         flex: 6,
       },
       {
-        title: "Desertificación",
+        title: "Desertificación: Estrategias para enfrentarla",
         src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
-        resume: "Las respuestas a la crisis climática hace un uso eficiente de los recursos, con una apuesta estratégica decidida del conjunto de las administraciones públicas, así como la implicación y compromiso del conjunto de los agentes económicos y sociales.",
+        resume:
+          "Las respuestas a la crisis climática hace un uso eficiente de los recursos, con una apuesta estratégica decidida del conjunto de las administraciones públicas, así como la implicación y compromiso del conjunto de los agentes económicos y sociales...",
         flex: 6,
       },
       {
         title: "Nuevas tecnologías: Aerolíneas",
         src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-        resume: "El branding se reinventa continuamente para volver a empezar de nuevo. El CMO cierra una ronda inicial de 10M €, mediante el informe correspondiente.",
+        resume:
+          "El branding se reinventa continuamente para volver a empezar de nuevo. El CMO cierra una ronda inicial de 10M €, mediante el informe correspondiente...",
         flex: 6,
       },
     ],
@@ -432,6 +435,9 @@ ul.slider li:target {
 
 .news-info__title {
   align-self: center;
+}
+.v-toolbar__title.noticias {
+  color: #fff;
 }
 /* Fin de Estilos en la sección de noticias */
 .services-info {
