@@ -299,6 +299,7 @@ export default {
           store.commit("cambiarUsuario", this.users[i].nombre);
           var aux = true;
           store.commit("cambiarEstadoLogin", aux);
+          store.commit("cambiarAdmin", this.users[i].administrador)
           this.aux1 = false;
           break;
         } else {

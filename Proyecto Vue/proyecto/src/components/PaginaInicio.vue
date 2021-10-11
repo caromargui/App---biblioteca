@@ -198,7 +198,7 @@
     <div>
 
     <!-- Inicio sección integrantes -->  
-    
+    <h1>Equipo 7  -  Grupo 32</h1>
       <v-row>
         <v-col>
           <v-card class="mx-auto" max-width="344">

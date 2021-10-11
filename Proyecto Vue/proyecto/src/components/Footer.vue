@@ -13,17 +13,18 @@
         </a>
       </div>
       <article>
-        <h2>Contactanos</h2>
+        <br />
+        <h2>Contáctanos</h2>
         <p>
-          Sebastian Barrera (Scrum Master): <i>sbarrera.96@hotmail.com</i>
+          Sebastian Barrera : <i>sbarrera.96@hotmail.com</i>
           <br />
-          Carolina Cova (Product owner):
+          Carolina Cova :
           <i>caromargui@gmail.com</i> <br />
-          Sebastian Rentería (Development Team):
+          Sebastian Rentería :
           <i>sren97@gmail.com </i> <br />
-          Diego Guisao (Development Team):
+          Diego Guisao :
           <i>diego.alexander.guisao@gmail.com </i> <br />
-          Santiago Puello (Development Team):
+          Santiago Puello :
           <i>sepuellov@unal.edu.co </i> <br />
         </p>
         <p>

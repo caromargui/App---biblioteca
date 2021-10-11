@@ -1,14 +1,12 @@
 <template>
-  <div class="home" v-if="$store.state.loginOK == true">
+  <div class="home">
     <Header
       :nlogin="$store.state.nombreLogin"
       :var1="$store.state.loginOK"
     ></Header>
+    <br />
     <h1>Contáctenos</h1>
     <contactenos />
-  </div>
-  <div v-else>
-    <inicio-sesion />
   </div>
 </template>
 
@@ -28,11 +26,11 @@ export default {
     InicioSesion,
   },
   created: () => {
-    store.commit("setCurrentView","/about");
-    console.log(store.state.view)
+    store.commit("setCurrentView", "/about");
+    console.log(store.state.view);
   },
-  mounted (){
-    window.scrollTo(0,0)
-  }
+  mounted() {
+    window.scrollTo(0, 0);
+  },
 };
 </script>
