@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     users: [],
     nombreLogin: "Este es el ensayo",
-    loginOK: false
+    loginOK: false,
+    view: "/"
   },
   mutations: {
     setUsers(state, payload) {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     cambiarEstadoLogin(state, payload) {
       state.loginOK = payload;
+    },
+    setCurrentView(state, payload){
+      state.view = payload;
     }
   },
   actions: {

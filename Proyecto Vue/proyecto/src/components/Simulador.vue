@@ -64,7 +64,8 @@
       style="background-color: lightgray;"
       shaped>
     <h3>Valor Cuota</h3>
-    <h4>{{parseFloat(valorcuota).toFixed(2)}} </h4></v-card></v-col>
+    <h4>{{(valorcuota)}}
+           </h4></v-card></v-col>
     <v-col></v-col>
     </v-row>
   </v-container>
@@ -96,7 +97,10 @@ export default {
   methods: { 
       cuotafija(){
      //solucion sencilla<!---this.valorcuota=((parseFloat(this.valorprestamo))*(parseFloat(this.interes)))/(1-(1+(parseFloat (this.interes)))^(parseFloat(this.cuotas)*-1));
-      this.valorcuota=((parseFloat (this.valorprestamo)*(1+((parseFloat(this.interes))/100)))^(parseFloat(this.cuotas))/parseFloat(this.cuotas));
+      this.valorcuota=((parseFloat (this.valorprestamo)|| 0*(1+((parseFloat(this.interes))|| 0/100)))^(parseFloat(this.cuotas))|| 0/parseFloat(this.cuotas)).toFixed(2);
+       if (isNaN(valorprestamo) || isNaN(interes) || isNaN(cuotas)) {
+       valorcuota = '0';
+        return;}
       //<!---(0,796575374*((1+0,796575374)^(parseFloat (this.cuotas)))))/(((1+0,796575374)^(parseFloat(this.cuotas)))-1);
     }
 
