@@ -1,6 +1,4 @@
 <template>
-  <div> 
-    <Header :nlogin=nombreLogin :var1=loginOK></Header>
   <div v-if="$store.state.loginOK == true">
     <Header
       :nlogin="$store.state.nombreLogin"
@@ -8,7 +6,6 @@
     ></Header>
 
     <v-container>
-
       <v-row>
         <v-col>
           <h1>¡Busca tu libro preferido!</h1>
@@ -184,7 +181,7 @@ export default {
     availableRules: [(v) => !!v || "Disponibilidad es obligatorio"],
     checkbox: false,
     id: null,
-    search: '',
+    search: "",
   }),
   created: () => {
     store.commit("setCurrentView", "/prestamos");
