@@ -112,7 +112,6 @@
       </div>
       <!-- fin sección de servicios -->
 
-      <h1>Noticias</h1>
       <!-- inicio sección de noticias -->
       <div id="news" class="news-section">
         <article class="news-info">
@@ -260,9 +259,38 @@ import Header from "./Header.vue";
 export default {
   name: "PaginaInicio",
   components: { Header, Footer },
-  data: () => {
-    return {};
-  },
+  data: () => ({
+    cards: [
+      {
+        title: "Startups: Perspectivas futuras",
+        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+        resume:
+          "Triunfarán aquellas startups que ofrezcan soluciones a través de tecnologías como Big Data, impresión 3D, robótica, realidad aumentada, Internet de las Cosas, Blockchain o ciberseguridad...",
+        flex: 6,
+      },
+      {
+        title: "La desertificación acaba con los bosques del Amazonas",
+        src: "https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg",
+        resume:
+          "Los jóvenes de la generación climática elaboran un plan de choque para contrarrestar la deforestación. En la medida de lo posible...",
+        flex: 6,
+      },
+      {
+        title: "Desertificación: Estrategias para enfrentarla",
+        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+        resume:
+          "Las respuestas a la crisis climática hace un uso eficiente de los recursos, con una apuesta estratégica decidida del conjunto de las administraciones públicas, así como la implicación y compromiso del conjunto de los agentes económicos y sociales...",
+        flex: 6,
+      },
+      {
+        title: "Nuevas tecnologías: Aerolíneas",
+        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        resume:
+          "El branding se reinventa continuamente para volver a empezar de nuevo. El CMO cierra una ronda inicial de 10M €, mediante el informe correspondiente...",
+        flex: 6,
+      },
+    ],
+  }),
   methods: {},
 };
 </script>
@@ -448,6 +476,9 @@ ul.slider li:target {
 .news-info__title {
   align-self: center;
   height: 38px;
+}
+.v-toolbar__title.noticias {
+  color: #fff;
 }
 /* Fin de Estilos en la sección de noticias */
 .services-info {
