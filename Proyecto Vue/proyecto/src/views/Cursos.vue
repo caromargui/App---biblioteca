@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <Header />
+  <div v-if="$store.state.loginOK == true">
+    <Header
+      :nlogin="$store.state.nombreLogin"
+      :var1="$store.state.loginOK"
+    ></Header>
     <v-container>
       <v-row justify="center">
         <v-col cols="auto">
@@ -102,12 +105,17 @@
     </v-container>
     <Footer />
   </div>
+  <div v-else>
+    <inicio-sesion />
+  </div>
 </template>
 <script>
 import Footer from "../components/Footer.vue";
 import Header from "../components/Header.vue";
+import store from "../store/index.js";
+import InicioSesion from "../views/InicioSesion.vue";
 export default {
-  components: { Header, Footer },
+  components: { Header, Footer, InicioSesion },
   data: () => ({
     items: [
       {
@@ -180,6 +188,14 @@ export default {
       });
     },
   },
+
+  created: () => {
+    store.commit("setCurrentView", "/Cursos");
+    console.log(store.state.view);
+  },
+  mounted (){
+    window.scrollTo(0,0)
+  }
 };
 </script>
 

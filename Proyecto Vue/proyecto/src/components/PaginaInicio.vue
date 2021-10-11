@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header :nlogin=$store.state.nombreLogin :var1=$store.state.loginOK></Header>
     <!-- Carousel Bootstrap -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
       <!-- Indicators/dots -->
@@ -152,6 +152,62 @@
       </div>
       <!-- fin sección de noticias -->
     </div>
+    <div>
+
+    <!-- Inicio sección integrantes -->  
+    <h1>Equipo 7  -  Grupo 32</h1>
+      <v-row>
+        <v-col>
+          <v-card class="mx-auto" max-width="344">
+          <v-img src="./img/Sebastian B.png" 
+          height="200px"></v-img>
+          <v-card-title>Sebastian Barrera</v-card-title>
+          <v-card-subtitle>Scrum Master</v-card-subtitle>
+          </v-card>
+        </v-col>
+
+        <v-col>
+          <v-card class="mx-auto" max-width="344">
+          <v-img src="./img/Carolina.png" 
+          height="200px"></v-img>
+          <v-card-title>Carolina Cova</v-card-title>
+          <v-card-subtitle>Product Owner</v-card-subtitle>
+          </v-card>
+        </v-col>
+
+        <v-col>
+          <v-card class="mx-auto" max-width="344">
+          <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" 
+          height="200px"></v-img>
+          <v-card-title>Sebastian Renteria</v-card-title>
+          <v-card-subtitle>Development team</v-card-subtitle>
+          </v-card>
+        </v-col>
+
+        <v-col>
+          <v-card class="mx-auto" max-width="344">
+          <v-img src="./img/Diego.png" 
+          height="200px"></v-img>
+          <v-card-title>Diego Guisao</v-card-title>
+          <v-card-subtitle>Development team</v-card-subtitle>
+          </v-card>
+        </v-col>
+
+        <v-col>
+          <v-card class="mx-auto" max-width="344">
+          <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" 
+          height="200px"></v-img>
+          <v-card-title>Santiago Puello</v-card-title>
+          <v-card-subtitle>Development team</v-card-subtitle>
+          </v-card>
+        </v-col>
+      </v-row>
+    
+    <!-- Fin sección integrantes -->
+
+    </div>
+    <br/>
+    <br/>
     <!-- Inicio pie del sitio -->
     <Footer />
   </div>
@@ -160,6 +216,7 @@
 <script>
 import Footer from "./Footer.vue";
 import Header from "./Header.vue";
+
 export default {
   name: "PaginaInicio",
   components: { Header, Footer },

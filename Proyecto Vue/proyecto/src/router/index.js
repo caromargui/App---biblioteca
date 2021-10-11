@@ -43,7 +43,7 @@ const routes = [
     component: Cursos
   },
   {
-    path: '/Prestamos',
+    path: '/prestamos',
     name: 'Prestamos',
     component: Prestamos 
     

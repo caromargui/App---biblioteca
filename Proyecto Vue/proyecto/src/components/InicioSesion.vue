@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :nlogin=nombreLogin :var1=loginOK></Header>
+    <Header :nlogin="nombreLogin" :var1="loginOK"></Header>
 
     <v-app id="inspire">
       <v-content>
@@ -39,9 +39,24 @@
                             rounded
                             color="light-blue accent-3"
                             dark
-                            @click="loginValidation"
+                            @click="login"
                             >INICIAR SESIÓN</v-btn
                           >
+                          <v-progress-circular
+                            v-if="loginOK == true"
+                            indeterminate
+                            color="primary"
+                          ></v-progress-circular>
+                          <div v-if="aux1 == true" class="text-center">
+                            <br />
+                            <v-alert
+                              :value="true"
+                              type="error"
+                              icon="mdi-alert-circle"
+                            >
+                              Email o contraseña incorrectos.
+                            </v-alert>
+                          </div>
                         </div>
                         <br />
                       </v-col>
@@ -153,7 +168,7 @@
                                 type="success"
                                 icon="mdi-account-check"
                               >
-                                El usuario se ha registrado con éxito
+                                El usuario se ha registrado con éxito.
                               </v-alert>
                             </div>
                           </v-form>
@@ -207,6 +222,7 @@
 <script>
 import Header from "./Header.vue";
 import store from "../store/index.js";
+import router from "../router";
 
 export default {
   components: { Header },
@@ -217,8 +233,14 @@ export default {
     loginOK: false,
     confirmacion: false,
     nombreLogin: "",
+    nombre:"",
+    apellido:"",
+    email:"",
+    password1:"",
+    password2:"",
     password: "aaaaaa",
     UserEmail: "sbarrera.96@hotmail.com",
+    aux1: false,
     nameRules: [(v) => !!v || "*Nombre es obligatorio"],
     surnameRules: [(v) => !!v || "*Apellido es obligatorio"],
     emailRules: [
@@ -255,7 +277,7 @@ export default {
     },
     reset() {
       this.$refs.form.reset();
-      this.confirmacion=false
+      this.confirmacion = false;
     },
     resetValidation() {
       this.$refs.form.resetValidation();
@@ -273,15 +295,28 @@ export default {
           console.log("Esta el usuario");
           console.log(this.users[i].email);
           console.log(this.users[i].contraseña);
-          console.log(this.users[i].nombre)
+          console.log(this.users[i].nombre);
+          store.commit("cambiarUsuario", this.users[i].nombre);
           var aux = true;
+          store.commit("cambiarEstadoLogin", aux);
+          store.commit("cambiarAdmin", this.users[i].administrador)
+          this.aux1 = false;
           break;
         } else {
           var aux = false;
+          this.aux1 = true;
         }
       }
       console.log(aux);
-      return (this.loginOK = aux,this.nombreLogin=this.users[i].nombre);
+      return (this.loginOK = aux), (this.nombreLogin = this.users[i].nombre);
+    },
+    login() {
+      this.loginValidation();
+      if ((this.loginOK = true)) {
+        setTimeout(function () {
+          router.push(store.state.view);
+        }, 500);
+      }
     },
   },
 
@@ -301,7 +336,6 @@ export default {
         "*Las contraseñas no coinciden. Inténtelo nuevamente.";
     },
   },
-  
 };
 </script>
 
