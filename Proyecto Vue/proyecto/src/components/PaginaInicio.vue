@@ -211,7 +211,7 @@
 
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" 
+          <v-img src="./img/Carolina.png" 
           height="200px"></v-img>
           <v-card-title>Carolina Cova</v-card-title>
           <v-card-subtitle>Product Owner</v-card-subtitle>

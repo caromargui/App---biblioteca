@@ -1,9 +1,12 @@
 <template>
+  <div> 
+    <Header :nlogin=nombreLogin :var1=loginOK></Header>
   <div v-if="$store.state.loginOK == true">
     <Header
       :nlogin="$store.state.nombreLogin"
       :var1="$store.state.loginOK"
     ></Header>
+
     <v-container>
 
       <v-row>
