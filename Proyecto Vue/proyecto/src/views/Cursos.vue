@@ -9,19 +9,18 @@
         <v-col cols="auto">
           <h1>Acerca de los cursos</h1>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio
-            eaque tempora necessitatibus exercitationem! A, minima tempora
-            voluptas sint amet cum dicta molestias dolorem, in harum, iste illo
-            illum iure doloremque! Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Earum perspiciatis asperiores voluptates nulla
-            molestiae, doloremque ut harum qui pariatur atque inventore corporis
-            optio sed eos quae, amet necessitatibus, distinctio mollitia.
+            Desde bibliotecas Comunitarias, les ofrecemos un repertorio de
+            cursos online gratuitos, y asincrónicos, los cuales pueden ser
+            descargados desde esta misma página. Encontraras, tutoriales,
+            documentos, videos, y todo tipo de material educativo, el cual
+            obtendras de forma fácil y segura, a tan sólo unos cuantos clicks.
+            Así puedes administrar mejor tu tiempo y tienes la opción de hacerlo
+            a tu ritmo.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-            voluptatem ad? Quos deleniti officiis, consequatur voluptates odit
-            corporis soluta odio incidunt molestiae obcaecati pariatur quibusdam
-            eveniet. Id, esse. Temporibus, a.
+            A continuación podrás encontrar el buscador de cursos, con sus
+            respectivos niveles, cuando hayas seleccionado un nivel, pulsa el
+            botón de acceder para obtener la información del curso.
           </p>
           <br />
           <hr />
@@ -30,7 +29,6 @@
           <v-toolbar flat color="transparent">
             <v-text-field
               v-model="search"
-              append-icon="mdi-magnify"
               label="Buscar cursos"
               single-line
             ></v-text-field>
@@ -55,6 +53,7 @@
                   :loading="loading"
                   class="mx-auto my-12"
                   max-width="374"
+                  sheped="true"
                 >
                   <template slot="progress">
                     <v-progress-linear
@@ -66,10 +65,7 @@
 
                   <v-img height="250" :src="item.image"></v-img>
 
-                  <v-card-title
-                    v-text="item.title"
-                    class="text-no-wrap"
-                  ></v-card-title>
+                  <v-card-title v-text="item.title"></v-card-title>
                   <hr />
                   <v-card-text class="justify-center" v-text="item.resume">
                     <v-chip v-text="item.keyword"></v-chip>
@@ -77,9 +73,9 @@
 
                   <v-divider class="mx-4"></v-divider>
 
-                  <v-card-title>Nivel</v-card-title>
+                  <v-card-title class="a">Nivel</v-card-title>
 
-                  <v-card-text class="justify-center">
+                  <v-card-text>
                     <v-chip-group
                       v-model="selection"
                       active-class="deep-purple accent-4 white--text"
@@ -107,14 +103,12 @@
         </v-col>
       </v-row>
     </v-container>
-
     <Footer />
   </div>
   <div v-else>
     <inicio-sesion />
   </div>
 </template>
-
 <script>
 import Footer from "../components/Footer.vue";
 import Header from "../components/Header.vue";
@@ -129,7 +123,7 @@ export default {
           "https://cdn-images-1.medium.com/max/1024/1*9C9hLji68wV373tk8okLYA.jpeg",
         title: "TBI’s 5 Best: SF Mocktails to Finish Dry January Strong",
         resume:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nam quisquam odit magnam, aut quis natus. Nesciunt, tempora asperiores numquam necessitatibus nam sapiente labore, voluptatum nostrum quos illo animi sequi.",
+          "El punto de partida para la planificación serán las conclusiones y valoraciones relativas a los procesos de autoevaluación y mejora del curso anterior.",
         keyword: "Drinks",
       },
       {
@@ -138,7 +132,7 @@ export default {
         title:
           "PWAs on iOS 12.2 beta: the good, the bad, and the “not sure yet if good”",
         resume:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nam quisquam odit magnam, aut quis natus. Nesciunt, tempora asperiores numquam necessitatibus nam sapiente labore, voluptatum nostrum quos illo animi sequi.",
+          "elaborará un informe sobre los objetivos que no se han alcanzado. El archivo, deberá consignar qué resultados de aprendizaje y criterios de evaluación no han podido adquirirse de manera adecuada.",
         keyword: "Phones",
       },
       {
@@ -146,7 +140,7 @@ export default {
           "https://cdn-images-1.medium.com/max/1024/1*rTEtei1UEmNqbq6evRsExw.jpeg",
         title: "How to Get Media Mentions for Your Business",
         resume:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nam quisquam odit magnam, aut quis natus. Nesciunt, tempora asperiores numquam necessitatibus nam sapiente labore, voluptatum nostrum quos illo animi sequi.",
+          "se centrará en la retroalimentación de información, el refuerzo positivo y apoyo emocional, para poder verificar la situación del alumnado en lo relativo a su proceso de aprendizaje.",
         keyword: "Social",
       },
       {
@@ -155,7 +149,7 @@ export default {
         title:
           "The Pitfalls Of Outsourcing Self-Awareness To Artificial Intelligence",
         resume:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nam quisquam odit magnam, aut quis natus. Nesciunt, tempora asperiores numquam necessitatibus nam sapiente labore, voluptatum nostrum quos illo animi sequi.",
+          "Las habilidades, destrezas y competencias llevarán a cabo reuniones, para establecer los mecanismos de coordinación necesarios en lo relativo a las programaciones didácticas y seguimiento de las mismas.",
         keyword: "Military",
       },
       {
@@ -163,7 +157,7 @@ export default {
           "https://cdn-images-1.medium.com/max/1024/1*eogFpsVgNzXQLCVgFzT_-A.jpeg",
         title: "Degrees of Freedom and Sudoko",
         resume:
-          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nam quisquam odit magnam, aut quis natus. Nesciunt, tempora asperiores numquam necessitatibus nam sapiente labore, voluptatum nostrum quos illo animi sequi.",
+          "En la medida de lo posible, el CTO deberá consignar qué resultados de aprendizaje y criterios de evaluación no han podido adquirirse de manera adecuada.",
         keyword: "Social",
       },
     ],
@@ -208,5 +202,33 @@ export default {
 <style>
 h1 {
   text-align: center;
+}
+.v-card__title {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  line-height: 2rem;
+  word-break: keep-all;
+  max-height: 100px;
+  min-height: 100px;
+}
+.v-card__title.a {
+  align-items: baseline;
+  max-height: 50px;
+  min-height: 50px;
+}
+.v-card__actions {
+  align-items: baseline;
+  max-height: 50px;
+  min-height: 50px;
+}
+.v-card__text {
+  max-height: 107px;
+  min-height: 107px;
+  max-width: 374px;
+  min-width: 374px;
 }
 </style>

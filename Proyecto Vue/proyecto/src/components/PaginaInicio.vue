@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Header :nlogin=$store.state.nombreLogin :var1=$store.state.loginOK></Header>
+    <Header
+      :nlogin="$store.state.nombreLogin"
+      :var1="$store.state.loginOK"
+    ></Header>
     <!-- Carousel Bootstrap -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
       <!-- Indicators/dots -->
@@ -116,16 +119,15 @@
           <div class="news-header">
             <img
               class="news-info__image"
-              src="http://placeimg.com/400/200/animals"
+              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
               alt=""
             />
-            <h2 class="news-info__title">Noticia 1</h2>
+            <h2 class="news-info__title">Startups: Perspectivas futuras</h2>
           </div>
           <p class="news-info__text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
-            quas voluptate magni repellat eligendi! Inventore voluptas
-            voluptates quia voluptatum expedita, ducimus delectus dolore eaque
-            maiores iusto modi eum aut corporis?...<a
+            Triunfarán aquellas startups que ofrezcan soluciones a través de
+            tecnologías como Big Data, impresión 3D, robótica, realidad
+            aumentada, Internet de las Cosas, Blockchain...<a
               href="http://127.0.0.1:5500/src/index.html"
             >
               Ver más</a
@@ -137,19 +139,18 @@
           <div class="news-header">
             <img
               class="news-info__image"
-              src="http://placeimg.com/400/200/tech"
+              src="https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg"
               alt=""
             />
-            <h2 class="news-info__title">Noticia 2</h2>
+            <h2 class="news-info__title">
+              La desertificación acaba con los bosques
+            </h2>
           </div>
           <p class="news-info__text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
-            quas voluptate magni repellat eligendi! Inventore voluptas
-            voluptates quia voluptatum expedita, ducimus delectus dolore eaque
-            maiores iusto modi eum aut corporis?...<a
+            Los jóvenes de la generación climática elaboran un plan de choque
+            para contrarrestar la deforestación. En la medida de lo posible...<a
               href="http://127.0.0.1:5500/src/index.html"
-            >
-              Ver más</a
+              >Ver más</a
             >
           </p>
         </article>
@@ -158,20 +159,18 @@
           <div class="news-header">
             <img
               class="news-info__image"
-              src="http://placeimg.com/400/200/arch"
+              src="https://cdn.vuetifyjs.com/images/cards/road.jpg"
               alt=""
             />
-            <h2 class="news-info__title">Noticia 3</h2>
+            <h2 class="news-info__title">
+              Desertificación: Estrategias para enfrentarla
+            </h2>
           </div>
           <p class="news-info__text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
-            quas voluptate magni repellat eligendi! Inventore voluptas
-            voluptates quia voluptatum expedita, ducimus delectus dolore eaque
-            maiores iusto modi eum aut corporis?...<a
-              href="http://127.0.0.1:5500/src/index.html"
-            >
-              Ver más</a
-            >
+            Las respuestas a la crisis climática hace un uso eficiente de los
+            recursos, con una apuesta estratégica decidida del conjunto de las
+            administraciones públicas...
+            <a href="http://127.0.0.1:5500/src/index.html"> Ver más</a>
           </p>
         </article>
 
@@ -179,16 +178,15 @@
           <div class="news-header">
             <img
               class="news-info__image"
-              src="http://placeimg.com/400/200/people"
+              src="https://cdn.vuetifyjs.com/images/cards/plane.jpg"
               alt=""
             />
-            <h2 class="news-info__title">Noticia 4</h2>
+            <h2 class="news-info__title">Nuevas tecnologías: Aerolíneas</h2>
           </div>
           <p class="news-info__text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
-            quas voluptate magni repellat eligendi! Inventore voluptas
-            voluptates quia voluptatum expedita, ducimus delectus dolore eaque
-            maiores iusto modi eum aut corporis?...
+            El branding se reinventa continuamente para volver a empezar de
+            nuevo. El CMO cierra una ronda inicial de 10M $, mediante el informe
+            correspondiente...
             <a href="http://127.0.0.1:5500/src/index.html"> Ver más</a>
           </p>
         </article>
@@ -196,61 +194,60 @@
       <!-- fin sección de noticias -->
     </div>
     <div>
-
-    <!-- Inicio sección integrantes -->  
-    <h1>Equipo 7  -  Grupo 32</h1>
+      <!-- Inicio sección integrantes -->
+      <h1>Equipo 7 - Grupo 32</h1>
       <v-row>
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="./img/Sebastian B.png" 
-          height="200px"></v-img>
-          <v-card-title>Sebastian Barrera</v-card-title>
-          <v-card-subtitle>Scrum Master</v-card-subtitle>
+            <v-img src="./img/Sebastian B.png" height="200px"></v-img>
+            <v-card-title>Sebastian Barrera</v-card-title>
+            <v-card-subtitle>Scrum Master</v-card-subtitle>
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="./img/Carolina.png" 
-          height="200px"></v-img>
-          <v-card-title>Carolina Cova</v-card-title>
-          <v-card-subtitle>Product Owner</v-card-subtitle>
+            <v-img src="./img/Carolina.png" height="200px"></v-img>
+            <v-card-title>Carolina Cova</v-card-title>
+            <v-card-subtitle>Product Owner</v-card-subtitle>
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" 
-          height="200px"></v-img>
-          <v-card-title>Sebastian Renteria</v-card-title>
-          <v-card-subtitle>Development team</v-card-subtitle>
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              height="200px"
+            ></v-img>
+            <v-card-title>Sebastian Renteria</v-card-title>
+            <v-card-subtitle>Development team</v-card-subtitle>
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="./img/Diego.png" 
-          height="200px"></v-img>
-          <v-card-title>Diego Guisao</v-card-title>
-          <v-card-subtitle>Development team</v-card-subtitle>
+            <v-img src="./img/Diego.png" height="200px"></v-img>
+            <v-card-title>Diego Guisao</v-card-title>
+            <v-card-subtitle>Development team</v-card-subtitle>
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="mx-auto" max-width="344">
-          <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" 
-          height="200px"></v-img>
-          <v-card-title>Santiago Puello</v-card-title>
-          <v-card-subtitle>Development team</v-card-subtitle>
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              height="200px"
+            ></v-img>
+            <v-card-title>Santiago Puello</v-card-title>
+            <v-card-subtitle>Development team</v-card-subtitle>
           </v-card>
         </v-col>
       </v-row>
-    
-    <!-- Fin sección integrantes -->
 
+      <!-- Fin sección integrantes -->
     </div>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <!-- Inicio pie del sitio -->
     <Footer />
   </div>
@@ -434,8 +431,8 @@ ul.slider li:target {
 }
 
 .news-info__image {
-  width: 100%;
-  height: 100%;
+  width: 650.88px;
+  height: 300.5px;
   border-radius: 1.5rem;
 }
 
@@ -450,6 +447,7 @@ ul.slider li:target {
 
 .news-info__title {
   align-self: center;
+  height: 38px;
 }
 /* Fin de Estilos en la sección de noticias */
 .services-info {
