@@ -76,7 +76,9 @@
       <div id="servicios" class="services-section">
         <article class="services-info">
           <img class="services-info__imagen" src="./img/loan.png" alt="" />
-          <h2 class="services-info__title"><router-link to="/simulador">Simulador</router-link></h2>
+          <h2 class="services-info__title">
+            <router-link to="/simulador">Simulador</router-link>
+          </h2>
           <p class="services-info__text">
             En esta sección podrás simular las cuotas de tu prestamo bancario y
             evaluar su solicitud
@@ -84,14 +86,20 @@
         </article>
         <article class="services-info">
           <img class="services-info__imagen" src="./img/logocurso.png" alt="" />
-          <h2 class="services-info__title"><router-link to="/cursos">Cursos</router-link></h2>
+          <h2 class="services-info__title">
+            <router-link to="/cursos">Cursos</router-link>
+          </h2>
           <p class="services-info__text">
             En esta sección podrás encontrar todo los cursos disponibles y los
             cursos ya finalizados.
           </p>
         </article>
         <article class="services-info">
-          <img class="services-info__imagen" src="./img/logolibros.png" alt="" />
+          <img
+            class="services-info__imagen"
+            src="./img/logolibros.png"
+            alt=""
+          />
           <h2 class="services-info__title">Préstamos</h2>
           <p class="services-info__text">
             En esta sección podrás acceder a los servicios relacionados con los
@@ -101,89 +109,46 @@
       </div>
       <!-- fin sección de servicios -->
 
-      <h1>Noticias</h1>
+
       <!-- inicio sección de noticias -->
       <div id="news" class="news-section">
-        <article class="news-info">
-          <div class="news-header">
-            <img
-              class="news-info__image"
-              src="http://placeimg.com/400/200/animals"
-              alt=""
-            />
-            <h2 class="news-info__title">Noticia 1</h2>
-          </div>
-          <p class="news-info__text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
-            quas voluptate magni repellat eligendi! Inventore voluptas
-            voluptates quia voluptatum expedita, ducimus delectus dolore eaque
-            maiores iusto modi eum aut corporis?...<a
-              href="http://127.0.0.1:5500/src/index.html"
-            >
-              Ver más</a
-            >
-          </p>
-        </article>
+        <v-card class="mx-auto" max-width="auto">
+          <v-system-bar color="indigo darken-2" dark>
+            <v-spacer></v-spacer>
+          </v-system-bar>
 
-        <article class="news-info">
-          <div class="news-header">
-            <img
-              class="news-info__image"
-              src="http://placeimg.com/400/200/tech"
-              alt=""
-            />
-            <h2 class="news-info__title">Noticia 2</h2>
-          </div>
-          <p class="news-info__text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
-            quas voluptate magni repellat eligendi! Inventore voluptas
-            voluptates quia voluptatum expedita, ducimus delectus dolore eaque
-            maiores iusto modi eum aut corporis?...<a
-              href="http://127.0.0.1:5500/src/index.html"
-            >
-              Ver más</a
-            >
-          </p>
-        </article>
+          <v-toolbar color="indigo" dark>
 
-        <article class="news-info">
-          <div class="news-header">
-            <img
-              class="news-info__image"
-              src="http://placeimg.com/400/200/arch"
-              alt=""
-            />
-            <h2 class="news-info__title">Noticia 3</h2>
-          </div>
-          <p class="news-info__text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
-            quas voluptate magni repellat eligendi! Inventore voluptas
-            voluptates quia voluptatum expedita, ducimus delectus dolore eaque
-            maiores iusto modi eum aut corporis?...<a
-              href="http://127.0.0.1:5500/src/index.html"
-            >
-              Ver más</a
-            >
-          </p>
-        </article>
+            <v-toolbar-title >Noticias</v-toolbar-title>
 
-        <article class="news-info">
-          <div class="news-header">
-            <img
-              class="news-info__image"
-              src="http://placeimg.com/400/200/people"
-              alt=""
-            />
-            <h2 class="news-info__title">Noticia 4</h2>
-          </div>
-          <p class="news-info__text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
-            quas voluptate magni repellat eligendi! Inventore voluptas
-            voluptates quia voluptatum expedita, ducimus delectus dolore eaque
-            maiores iusto modi eum aut corporis?...
-            <a href="http://127.0.0.1:5500/src/index.html"> Ver más</a>
-          </p>
-        </article>
+            <v-spacer></v-spacer>
+
+          </v-toolbar>
+
+          <v-container fluid>
+            <v-row dense>
+              <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
+                <v-card>
+                  <v-img
+                    :src="card.src"
+                    class="white--text align-end"
+                    gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                    height="200px"
+                  >
+                    <v-card-title v-text="card.title"></v-card-title>
+                  </v-img>
+
+                  <v-card-text class="text--primary" v-text="card.resume">
+                  </v-card-text>
+
+                  <v-card-actions>
+                    <v-btn color="orange" text> Ver más </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card>
       </div>
       <!-- fin sección de noticias -->
     </div>
@@ -193,14 +158,39 @@
 </template>
 
 <script>
-import Footer from './Footer.vue';
+import Footer from "./Footer.vue";
 import Header from "./Header.vue";
 export default {
   name: "PaginaInicio",
   components: { Header, Footer },
-  data: () => {
-    return {};
-  },
+  data: () => ({
+    cards: [
+      {
+        title: "Startups",
+        src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+        resume: "Triunfarán aquellas startups que ofrezcan soluciones a través de tecnologías como Big Data, impresión 3D, robótica, realidad aumentada, Internet de las Cosas, Blockchain o ciberseguridad.",
+        flex: 6,
+      },
+      {
+        title: "La desertificación acaba con los bosques del Amazonas.",
+        src: "https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg",
+        resume: "Los jóvenes de la generación climática elaboran un plan de choque para contrarrestar la deforestación. En la medida de lo posible.",
+        flex: 6,
+      },
+      {
+        title: "Desertificación",
+        src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+        resume: "Las respuestas a la crisis climática hace un uso eficiente de los recursos, con una apuesta estratégica decidida del conjunto de las administraciones públicas, así como la implicación y compromiso del conjunto de los agentes económicos y sociales.",
+        flex: 6,
+      },
+      {
+        title: "Nuevas tecnologías: Aerolíneas",
+        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        resume: "El branding se reinventa continuamente para volver a empezar de nuevo. El CMO cierra una ronda inicial de 10M €, mediante el informe correspondiente.",
+        flex: 6,
+      },
+    ],
+  }),
   methods: {},
 };
 </script>
