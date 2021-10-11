@@ -114,41 +114,81 @@
 
       <!-- inicio sección de noticias -->
       <div id="news" class="news-section">
-        <v-card class="mx-auto" max-width="auto">
-          <v-system-bar color="#089dc2">
-            <v-spacer></v-spacer>
-          </v-system-bar>
+        <article class="news-info">
+          <div class="news-header">
+            <img
+              class="news-info__image"
+              src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
+              alt=""
+            />
+            <h2 class="news-info__title">Startups: Perspectivas futuras</h2>
+          </div>
+          <p class="news-info__text">
+            Triunfarán aquellas startups que ofrezcan soluciones a través de
+            tecnologías como Big Data, impresión 3D, robótica, realidad
+            aumentada, Internet de las Cosas, Blockchain...<a
+              href="http://127.0.0.1:5500/src/index.html"
+            >
+              Ver más</a
+            >
+          </p>
+        </article>
 
-          <v-toolbar color="#25294f">
-            <v-toolbar-title class = "noticias">Noticias</v-toolbar-title>
+        <article class="news-info">
+          <div class="news-header">
+            <img
+              class="news-info__image"
+              src="https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg"
+              alt=""
+            />
+            <h2 class="news-info__title">
+              La desertificación acaba con los bosques
+            </h2>
+          </div>
+          <p class="news-info__text">
+            Los jóvenes de la generación climática elaboran un plan de choque
+            para contrarrestar la deforestación. En la medida de lo posible...<a
+              href="http://127.0.0.1:5500/src/index.html"
+              >Ver más</a
+            >
+          </p>
+        </article>
 
-            <v-spacer></v-spacer>
-          </v-toolbar>
+        <article class="news-info">
+          <div class="news-header">
+            <img
+              class="news-info__image"
+              src="https://cdn.vuetifyjs.com/images/cards/road.jpg"
+              alt=""
+            />
+            <h2 class="news-info__title">
+              Desertificación: Estrategias para enfrentarla
+            </h2>
+          </div>
+          <p class="news-info__text">
+            Las respuestas a la crisis climática hace un uso eficiente de los
+            recursos, con una apuesta estratégica decidida del conjunto de las
+            administraciones públicas...
+            <a href="http://127.0.0.1:5500/src/index.html"> Ver más</a>
+          </p>
+        </article>
 
-          <v-container fluid>
-            <v-row dense>
-              <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-                <v-card>
-                  <v-img
-                    :src="card.src"
-                    class="white--text align-end"
-                    gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                    height="200px"
-                  >
-                    <v-card-title v-text="card.title"></v-card-title>
-                  </v-img>
-
-                  <v-card-text class="text--primary" v-text="card.resume">
-                  </v-card-text>
-
-                  <v-card-actions>
-                    <v-btn color="indigo" text> Ver más </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-card>
+        <article class="news-info">
+          <div class="news-header">
+            <img
+              class="news-info__image"
+              src="https://cdn.vuetifyjs.com/images/cards/plane.jpg"
+              alt=""
+            />
+            <h2 class="news-info__title">Nuevas tecnologías: Aerolíneas</h2>
+          </div>
+          <p class="news-info__text">
+            El branding se reinventa continuamente para volver a empezar de
+            nuevo. El CMO cierra una ronda inicial de 10M $, mediante el informe
+            correspondiente...
+            <a href="http://127.0.0.1:5500/src/index.html"> Ver más</a>
+          </p>
+        </article>
       </div>
       <!-- fin sección de noticias -->
     </div>
@@ -419,8 +459,8 @@ ul.slider li:target {
 }
 
 .news-info__image {
-  width: 100%;
-  height: 100%;
+  width: 650.88px;
+  height: 300.5px;
   border-radius: 1.5rem;
 }
 
@@ -435,6 +475,7 @@ ul.slider li:target {
 
 .news-info__title {
   align-self: center;
+  height: 38px;
 }
 .v-toolbar__title.noticias {
   color: #fff;
