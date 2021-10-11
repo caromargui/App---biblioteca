@@ -1,10 +1,6 @@
 <template>
   <div> 
-      
     <Header :nlogin=nombreLogin :var1=loginOK></Header>
-
->>>>>>> c90cc765108596c9d277369b2162b762ea7c24db
-    
     <v-container>
       <br/>
       <v-row>
