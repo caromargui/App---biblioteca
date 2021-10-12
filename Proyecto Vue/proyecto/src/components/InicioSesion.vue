@@ -226,6 +226,7 @@ export default {
         store.dispatch("getUsers");
       });
     },
+
     crearUsuario() {
       let obj = {
         nombre: this.nombre,
@@ -286,7 +287,10 @@ export default {
       }
     },
   },
-
+  created: () => {
+    //dispatch: accede a las acciones del store
+    store.dispatch("getUsers");
+  },
 
   computed: {
     users: () => {
