@@ -26,6 +26,7 @@
         lazy-validation
         v-if="$store.state.admin == true"
       >
+        <h2>Agregar/Actualizar libros</h2>
         <v-text-field
           v-model="name"
           :rules="nameRules"
@@ -84,7 +85,7 @@
         >
 
         <v-btn rounded color="error" class="mr-4" @click="reset">
-          Reset Form
+          Limpiar formulario
         </v-btn>
       </v-form>
       <!-- Fin formulario para creación y actualización -->
@@ -92,14 +93,6 @@
       <!-- Inicio tabla -->
       <v-simple-table>
         <template v-slot:default>
-          <v-card-title>
-            <v-text-field
-              v-model="search"
-              append-icon="mdi-magnify"
-              label="Search"
-              hide-details
-            ></v-text-field>
-          </v-card-title>
           <thead>
             <tr>
               <th class="text-left">Nombre</th>
@@ -152,6 +145,39 @@
 
       <br />
       <br />
+      <div v-if="$store.state.admin == true">
+        <h2>Usuarios registrados</h2>
+        <v-simple-table>
+          <template v-slot:default>
+            <thead>
+              <tr>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Apellido</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Administrador</th>
+                <th class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in users" :key="item._id">
+                <td class="text-center">{{ item.nombre }}</td>
+                <td class="text-center">{{ item.apellido }}</td>
+                <td class="text-center">{{ item.email }}</td>
+                <td class="text-center">{{ item.administrador }}</td>
+                <td class="text-center">
+                  <v-btn
+                    @click="eliminarUsuario(item._id)"
+                    color="error"
+                    elevation="12"
+                    rounded
+                    >Eliminar</v-btn
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
+      </div>
     </v-container>
     <Footer />
   </div>
@@ -186,11 +212,17 @@ export default {
   created: () => {
     store.commit("setCurrentView", "/prestamos");
     console.log(store.state.view);
+    //dispatch: accede a las acciones del store
     store.dispatch("getBooks");
+    store.dispatch("getUsers");
   },
+
   computed: {
     books: () => {
       return store.state.books;
+    },
+    users: () => {
+      return store.state.users;
     },
   },
   mounted() {
@@ -242,6 +274,12 @@ export default {
     },
     reset() {
       this.$refs.form.reset();
+    },
+    eliminarUsuario(id) {
+      let obj = { id };
+      store.dispatch("deleteUsers", obj).then(() => {
+        store.dispatch("getUsers");
+      });
     },
   },
 };

@@ -183,39 +183,6 @@
         </v-container>
       </v-content>
     </v-app>
-
-    <v-simple-table>
-      <template v-slot:default>
-        <thead>
-          <tr>
-            <th class="text-center">Nombre</th>
-            <th class="text-center">Apellido</th>
-            <th class="text-center">Email</th>
-            <th class="text-center">Contraseña</th>
-            <th class="text-center">Administrador</th>
-            <th class="text-center">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="item in users" :key="item._id">
-            <td class="text-center">{{ item.nombre }}</td>
-            <td class="text-center">{{ item.apellido }}</td>
-            <td class="text-center">{{ item.email }}</td>
-            <td class="text-center">{{ item.contraseña }}</td>
-            <td class="text-center">{{ item.administrador }}</td>
-            <td class="text-center">
-              <v-btn
-                @click="eliminarUsuario(item._id)"
-                color="error"
-                elevation="12"
-                rounded
-                >Eliminar</v-btn
-              >
-            </td>
-          </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
   </div>
 </template>
 
@@ -233,11 +200,11 @@ export default {
     loginOK: false,
     confirmacion: false,
     nombreLogin: "",
-    nombre:"",
-    apellido:"",
-    email:"",
-    password1:"",
-    password2:"",
+    nombre: "",
+    apellido: "",
+    email: "",
+    password1: "",
+    password2: "",
     password: "aaaaaa",
     UserEmail: "sbarrera.96@hotmail.com",
     aux1: false,
@@ -299,7 +266,7 @@ export default {
           store.commit("cambiarUsuario", this.users[i].nombre);
           var aux = true;
           store.commit("cambiarEstadoLogin", aux);
-          store.commit("cambiarAdmin", this.users[i].administrador)
+          store.commit("cambiarAdmin", this.users[i].administrador);
           this.aux1 = false;
           break;
         } else {
@@ -320,10 +287,6 @@ export default {
     },
   },
 
-  created: () => {
-    //dispatch: accede a las acciones del store
-    store.dispatch("getUsers");
-  },
 
   computed: {
     users: () => {

@@ -9,11 +9,11 @@
         <v-col cols="auto">
           <h1>Acerca de los cursos</h1>
           <p>
-            Desde bibliotecas Comunitarias, les ofrecemos un repertorio de
+            Desde Biblioteca Comunitaria, les ofrecemos un repertorio de
             cursos online gratuitos, y asincrónicos, los cuales pueden ser
             descargados desde esta misma página. Encontraras, tutoriales,
             documentos, videos, y todo tipo de material educativo, el cual
-            obtendras de forma fácil y segura, a tan sólo unos cuantos clicks.
+            obtendras de forma fácil y segura, a tan sólo unos cuantos clics.
             Así puedes administrar mejor tu tiempo y tienes la opción de hacerlo
             a tu ritmo.
           </p>
@@ -132,7 +132,7 @@ export default {
         title:
           "PWAs on iOS 12.2 beta: the good, the bad, and the “not sure yet if good”",
         resume:
-          "elaborará un informe sobre los objetivos que no se han alcanzado. El archivo, deberá consignar qué resultados de aprendizaje y criterios de evaluación no han podido adquirirse de manera adecuada.",
+          "Elaborará un informe sobre los objetivos que no se han alcanzado. El archivo, deberá consignar qué resultados de aprendizaje y criterios de evaluación no han podido adquirirse de manera adecuada.",
         keyword: "Phones",
       },
       {
@@ -140,7 +140,7 @@ export default {
           "https://cdn-images-1.medium.com/max/1024/1*rTEtei1UEmNqbq6evRsExw.jpeg",
         title: "How to Get Media Mentions for Your Business",
         resume:
-          "se centrará en la retroalimentación de información, el refuerzo positivo y apoyo emocional, para poder verificar la situación del alumnado en lo relativo a su proceso de aprendizaje.",
+          "Se centrará en la retroalimentación de información, el refuerzo positivo y apoyo emocional, para poder verificar la situación del alumnado en lo relativo a su proceso de aprendizaje.",
         keyword: "Social",
       },
       {
@@ -203,7 +203,7 @@ export default {
 h1 {
   text-align: center;
 }
-.v-card__title {
+/* .v-card__title {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
@@ -230,5 +230,5 @@ h1 {
   min-height: 107px;
   max-width: 374px;
   min-width: 374px;
-}
+} */
 </style>

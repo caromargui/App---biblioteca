@@ -32,20 +32,16 @@
               <router-link class="nav-link" to="/">Inicio</router-link>
             </li>
             <li>
-              <router-link class="nav-link" to="/about">About</router-link>
+              <router-link class="nav-link" to="/about">Contáctenos</router-link>
             </li>
             <li>
               <router-link class="nav-link" to="/cursos">Cursos</router-link>
             </li>
             <li>
-              <router-link class="nav-link" to="/simulador"
-                >Simulador</router-link
-              >
+              <router-link class="nav-link" to="/simulador">Simulador</router-link>
             </li>
             <li>
-              <router-link class="nav-link" to="/prestamos"
-                >Préstamos</router-link
-              >
+              <router-link class="nav-link" to="/prestamos">Préstamos</router-link>
             </li>
             <li class="nav-item dropdown" v-if="var1 == true">
               <a

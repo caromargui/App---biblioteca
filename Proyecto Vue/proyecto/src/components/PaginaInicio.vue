@@ -103,7 +103,10 @@
             src="./img/logolibros.png"
             alt=""
           />
-          <h2 class="services-info__title">Préstamos</h2>
+          
+          <h2 class="services-info__title">
+            <router-link to="/prestamos">Préstamos</router-link>
+          </h2>
           <p class="services-info__text">
             En esta sección podrás acceder a los servicios relacionados con los
             libros disponibles.
@@ -111,7 +114,7 @@
         </article>
       </div>
       <!-- fin sección de servicios -->
-
+      <h1>Noticias</h1>
       <!-- inicio sección de noticias -->
       <div id="news" class="news-section">
         <article class="news-info">
@@ -255,7 +258,6 @@
 <script>
 import Footer from "./Footer.vue";
 import Header from "./Header.vue";
-
 export default {
   name: "PaginaInicio",
   components: { Header, Footer },
@@ -300,7 +302,6 @@ export default {
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 body {
   max-width: 1400px;
   min-width: 375px;
@@ -310,67 +311,54 @@ body {
   margin-bottom: 0;
   color: #222222;
 }
-
 p {
   text-transform: none;
 }
-
 .center {
   padding: 70px 0;
   width: 50%;
 }
-
 .header-section {
   margin-bottom: 100px;
 }
-
 .header-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
 }
-
 .site-title {
   width: 30%;
 }
-
 .site-nav {
   width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-
 .site-nav > a {
   color: inherit;
   text-decoration: none;
 }
-
 .site-nav > a:hover {
   text-decoration: underline;
   font-weight: bold;
 }
-
 .logo-container {
   width: 30%;
 }
-
 .logo-container__site-logo {
   height: 80px;
 }
-
 .banner {
   width: 100%;
 }
-
 .banner > img {
   width: 100%;
   height: 400px;
   max-width: 1400px;
   object-fit: cover;
 }
-
 /* inicio slider con imágenes*/
 ul,
 li {
@@ -378,7 +366,6 @@ li {
   margin: 0;
   list-style: none;
 }
-
 ul.slider {
   position: relative;
   width: 100%;
@@ -386,7 +373,6 @@ ul.slider {
   max-width: 1400px;
   object-fit: cover;
 }
-
 ul.slider li {
   position: absolute;
   left: 0px;
@@ -397,34 +383,28 @@ ul.slider li {
   transition: opacity 0.5s;
   background: #fff;
 }
-
 ul.slider li img {
   width: 100%;
   height: 400px;
   max-width: 1400px;
   object-fit: cover;
 }
-
 ul.slider li:first-child {
   opacity: 1;
   /*se muestra el primer <li>*/
 }
-
 ul.slider li:target {
   opacity: 1;
   /*se muestra el <li> del enlace que pulsemos*/
 }
-
 .menu {
   text-align: center;
   margin: 20px;
 }
-
 .menu li {
   display: inline-block;
   text-align: center;
 }
-
 .menu li a {
   display: inline-block;
   color: #222222;
@@ -435,15 +415,12 @@ ul.slider li:target {
   font-size: 15px;
   border-radius: 200%;
 }
-
 /* fin slider con imágenes*/
-
 .services-section,
 .seccion-equipo {
   display: flex;
   margin-bottom: 100px;
 }
-
 .header-container {
   background-color: #089dc2;
 }
@@ -452,27 +429,22 @@ ul.slider li:target {
   flex-wrap: wrap;
   display: flex;
 }
-
 .news-info {
   width: 50%;
   padding: 10px;
 }
-
 .news-info__image {
   width: 650.88px;
   height: 300.5px;
   border-radius: 1.5rem;
 }
-
 .news-info__text {
   justify-content: center;
 }
-
 .news-header {
   display: block;
   justify-content: space-around;
 }
-
 .news-info__title {
   align-self: center;
   height: 38px;
@@ -485,7 +457,6 @@ ul.slider li:target {
   padding: 20px;
   text-align: center;
 }
-
 .seccion-pie {
   background-color: #25294f;
   height: 270px;
@@ -493,18 +464,15 @@ ul.slider li:target {
   color: white;
   justify-content: space-evenly;
 }
-
 .services-info__imagen {
   border-radius: 50%;
   margin-right: auto;
   margin-left: auto;
 }
-
 .team-info {
   width: 25%;
   padding: 15px;
 }
-
 .team-info__imagen {
   display: block;
   margin-right: auto;
