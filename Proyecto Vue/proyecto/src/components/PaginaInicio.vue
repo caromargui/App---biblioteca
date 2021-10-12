@@ -218,8 +218,9 @@
         <v-col>
           <v-card class="mx-auto" max-width="344">
             <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              src="./img/Sebastian R.png"
               height="200px"
+              position = "50% 25%"
             ></v-img>
             <v-card-title>Sebastian Renteria</v-card-title>
             <v-card-subtitle>Development team</v-card-subtitle>
