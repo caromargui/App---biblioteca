@@ -79,6 +79,7 @@ export default {
         valorprestamo:null,
         cuotas:null,
         valorcuota:"",
+        i:"",
         rules1:[
           value => !!value||'Valor obligatorio',
           value => (value && value >= 1000000)||'Valor obligatorio mayor a $1.000.000'
@@ -96,8 +97,10 @@ export default {
   },
   methods: { 
       cuotafija(){
+        this.i=parseFloat(this.interes)/100.0
      //solucion sencilla<!---this.valorcuota=((parseFloat(this.valorprestamo))*(parseFloat(this.interes)))/(1-(1+(parseFloat (this.interes)))^(parseFloat(this.cuotas)*-1));
-      this.valorcuota=((parseFloat (this.valorprestamo)|| 0*(1+((parseFloat(this.interes))|| 0/100)))^(parseFloat(this.cuotas))|| 0/parseFloat(this.cuotas)).toFixed(2);
+      this.valorcuota=(parseFloat(this.valorprestamo)*(this.i))/(1-((1+this.i))**(-parseFloat(this.cuotas)))
+      //this.valorcuota=((parseFloat(this.valorprestamo)|| 0*(1+((parseFloat(this.interes))|| 0/100)))^(parseFloat(this.cuotas))|| 0/parseFloat(this.cuotas)).toFixed(2);
        if (isNaN(valorprestamo) || isNaN(interes) || isNaN(cuotas)) {
        valorcuota = '0';
         return;}

@@ -130,7 +130,6 @@
             Triunfarán aquellas startups que ofrezcan soluciones a través de
             tecnologías como Big Data, impresión 3D, robótica, realidad
             aumentada, Internet de las Cosas, Blockchain...<a
-              href="http://127.0.0.1:5500/src/index.html"
             >
               Ver más</a
             >
@@ -151,7 +150,6 @@
           <p class="news-info__text">
             Los jóvenes de la generación climática elaboran un plan de choque
             para contrarrestar la deforestación. En la medida de lo posible...<a
-              href="http://127.0.0.1:5500/src/index.html"
               >Ver más</a
             >
           </p>
@@ -172,7 +170,7 @@
             Las respuestas a la crisis climática hace un uso eficiente de los
             recursos, con una apuesta estratégica decidida del conjunto de las
             administraciones públicas...
-            <a href="http://127.0.0.1:5500/src/index.html"> Ver más</a>
+            <a> Ver más</a>
           </p>
         </article>
 
@@ -189,7 +187,7 @@
             El branding se reinventa continuamente para volver a empezar de
             nuevo. El CMO cierra una ronda inicial de 10M $, mediante el informe
             correspondiente...
-            <a href="http://127.0.0.1:5500/src/index.html"> Ver más</a>
+            <a> Ver más</a>
           </p>
         </article>
       </div>

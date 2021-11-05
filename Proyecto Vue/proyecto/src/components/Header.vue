@@ -5,13 +5,15 @@
       style="background-color: #089dc2"
     >
       <div class="container-fluid">
-        <a class="navbar-brand col-3" href="#">
+        <a class="navbar-brand col-3">
+          <router-link class="nav-link" to="/">
           <img
             src="./img/logobiblioteca.png"
             alt=""
             width="116"
             class="d-inline-block align-text-center"
           />
+          </router-link>
         </a>
         <h1>Biblioteca Comunitaria</h1>
 
